@@ -7,6 +7,11 @@ import com.globalin.lunchlive.account.Account;
 
 public interface Mapper {
 
-	List<Account> login(Map<String, String> idPw);
+
+	List<String> loginId(Map<String, String> idPw);
+
+	List<String> loginPw(Map<String, String> idPw);
+
+	List<Account> account(Map<String, String> idPw);
 	
 }

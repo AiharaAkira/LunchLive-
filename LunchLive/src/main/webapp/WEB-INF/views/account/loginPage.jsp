@@ -8,10 +8,10 @@
 </head>
 <body>
 <div onclick="location.href='http://localhost/lunchlive/'">logo</div>
-	<form action="login.get">
+	<form action="login.get?id=&pw=">
 		<div>아이디<input name="id"></div>
 		<div>비번<input name="pw"></div>
-		<button onclick="location.href='http://localhost/lunchlive/'">로그인</button>
+		<button >로그인</button>
 	</form>
 	
 	<div onclick="location.href='http://localhost/lunchlive/findPw.do'">비밀번호 찾기</div>

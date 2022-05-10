@@ -2,12 +2,17 @@ package com.globalin.lunchlive.account;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AccountController  {
+	
+	@Autowired
+	private AccountDAO ado;
+	
 	@RequestMapping(value = "/findId.do", method = RequestMethod.GET)
 	public String findId(HttpServletRequest request) {
 		
@@ -36,6 +41,14 @@ public class AccountController  {
 		
 		
 		return "account/loginPage";
+	}
+	
+	@RequestMapping(value = "/login.get", method = RequestMethod.GET)
+	public String loginGet(HttpServletRequest request,Account account) {
+		
+		ado.loginCheck(request);
+		ado.login(request, account);
+		return "index";
 	}
 	
 	
