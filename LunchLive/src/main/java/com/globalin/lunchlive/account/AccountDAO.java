@@ -1,17 +1,10 @@
 package com.globalin.lunchlive.account;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.globalin.lunchlive.Mapper;
 
 @Service
 public class AccountDAO {
@@ -53,5 +46,26 @@ public class AccountDAO {
 	public void logout(HttpServletRequest request) {
 		request.getSession().setAttribute("loginAccount", null);
 	}
+
+
+	public void singUp(Account account, HttpServletRequest request) {
+		String id = request.getParameter("u_id");
+		String pw = request.getParameter("u_pw");
+		String nickname = request.getParameter("u_nickname");
+		
+		account.setU_id(id);
+		account.setU_pw(pw);
+		account.setU_nickname(nickname);
+		
+		if(ss.getMapper(AccountMapper.class).join(account)==1) {
+			System.out.println("가입성공");
+		}else {
+			System.out.println("가입실패");
+		}
+		
+		
+	}
+
+	
 
 }

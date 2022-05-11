@@ -16,7 +16,7 @@
 	
 	<div onclick="location.href='http://localhost/lunchlive/findPw.do'">비밀번호 찾기</div>
 	<div onclick="location.href='http://localhost/lunchlive/findId.do'">아이디 찾기</div>
-	<div onclick="location.href='http://localhost/lunchlive/signUp.do'">회원가입</div>
+	<div onclick="location.href='http://localhost/lunchlive/signUp.go'">회원가입</div>
 
 </body>
 </html>

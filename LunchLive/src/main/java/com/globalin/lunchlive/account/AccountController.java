@@ -29,9 +29,16 @@ public class AccountController  {
 
 	
 	@RequestMapping(value = "/signUp.do", method = RequestMethod.GET)
-	public String signUp(HttpServletRequest request) {
+	public String signUp(HttpServletRequest request, Account account) {
 		
-		
+		ado.singUp(account,request);
+		ado.loginCheck(request);
+		return "index";
+	}
+	
+	@RequestMapping(value = "/signUp.go", method = RequestMethod.GET)
+	public String signGo(HttpServletRequest request, Account account) {
+
 		return "account/signUp";
 	}
 

@@ -4,4 +4,6 @@ public interface AccountMapper {
 
 	Account getAccountByID(Account account);
 
+	int join(Account account);
+
 }
