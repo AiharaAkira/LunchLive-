@@ -9,8 +9,8 @@
 <body>
 <div onclick="location.href='http://localhost/lunchlive/'">logo</div>
 	<form action="login.get?id=&pw=">
-		<div>아이디<input name="id"></div>
-		<div>비번<input name="pw"></div>
+		<div>아이디<input name="u_id"></div>
+		<div>비번<input name="u_pw"></div>
 		<button >로그인</button>
 	</form>
 	

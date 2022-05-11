@@ -21,48 +21,37 @@ public class AccountDAO {
 
 	public void login(HttpServletRequest request, Account account) {
 
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		Account dbAccount = ss.getMapper(AccountMapper.class).getAccountByID(account);
 
-		Map<String, String> idPw = new HashMap<String, String>();
-		idPw.put("u_id", id);
-		idPw.put("u_pw", pw);
-		List<String> id1 = ss.getMapper(Mapper.class).loginId(idPw);
-		List<String> pw2 = ss.getMapper(Mapper.class).loginPw(idPw);
-		List<Account> accounts = ss.getMapper(Mapper.class).account(idPw);
-
-		
-		if(id1.equals(id)) {
-			
-			if(pw.equals(pw)) {
-				
-				//값 여러개 - 빈
-				Account a = new Account();
-				
-
-				
+		if (dbAccount != null) {
+			if (account.getU_pw().equals(dbAccount.getU_pw())) {
+				request.getSession().setAttribute("loginAccount", dbAccount);
+				request.getSession().setMaxInactiveInterval(60*10);
+			} else {
+				System.out.println("비밀번호다름_로그인실패!");
 			}
+		}else {
+			System.out.println("미가입 id_로그인실패");
+		}
+
+	}
+
+	public boolean loginCheck(HttpServletRequest request) {
+		Account account = (Account) request.getSession().getAttribute("loginAccount");
+
+		if(account != null) {
+			request.setAttribute("login", "account/loginOK.jsp");
+			return true;
+		}else {
+			request.setAttribute("login", "account/loginReady.jsp");
+			return false;
 			
 		}
-		
-		
 		
 	}
 
-	public void loginCheck(HttpServletRequest request) {
-		// hs
-		HttpSession hs = request.getSession();
-		Account a = (Account) hs.getAttribute("accountInfo");
-
-		if (a == null) {
-			// 로그인 실패
-			request.setAttribute("login", "loginPage.jsp");
-		} else {
-
-			// 로그인 성공
-			request.setAttribute("login", "loginOK.jsp");
-		}
-
+	public void logout(HttpServletRequest request) {
+		request.getSession().setAttribute("loginAccount", null);
 	}
 
 }

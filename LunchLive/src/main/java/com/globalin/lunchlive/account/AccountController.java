@@ -39,15 +39,23 @@ public class AccountController  {
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String login(HttpServletRequest request) {
 		
-		
+		//로그인 페이지로 이동
 		return "account/loginPage";
 	}
 	
 	@RequestMapping(value = "/login.get", method = RequestMethod.GET)
 	public String loginGet(HttpServletRequest request,Account account) {
-		
-		ado.loginCheck(request);
+		//로그인
 		ado.login(request, account);
+		ado.loginCheck(request);
+		return "index";
+	}
+	
+	@RequestMapping(value = "/logOut.do", method = RequestMethod.GET)
+	public String logOut(HttpServletRequest request,Account account) {
+		//로그인
+		ado.logout(request);
+		ado.loginCheck(request);
 		return "index";
 	}
 	
