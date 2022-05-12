@@ -11,5 +11,5 @@ constraint users_PK primary key(u_id, u_nickname)
 insert into users values('id','pw','닉네임',1,sysdate);
 //유저 조회
 select * from USERS;
-delete from users where u_id = 'aa';
+
 

@@ -33,7 +33,7 @@ public class AccountController  {
 		
 		ado.singUp(account,request);
 		ado.loginCheck(request);
-		return "index";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/signUp.go", method = RequestMethod.GET)

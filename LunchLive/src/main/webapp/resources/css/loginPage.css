@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+	background-color: gray;
+	text-align: center;
+}
+
+
+.input_login{
+	border-radius: 5px;	
+	width: 200px;
+	height: 30px;
+}
+
+
+.login_menu{
+	margin-right: 3px;
+}
+
+#logo{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#login_box {
+	margin:0 auto;
+	width:300px;
+	height:300px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+
+
+#input_login_id{
+	margin-top: 100px;
+	
+}
+
+#login_btn{
+	margin-top:50px;
+	background-color:orange;
+	color:white;
+	border-radius:5px;
+	width:210px;
+	height:40px;
+}
