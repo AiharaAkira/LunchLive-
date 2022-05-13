@@ -2,13 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.globalin.lunchlive.account.AccountMapper">
 
-	<select id = "getAccountByID" resultType="Account">
-		select * from users
-		where u_id = #{u_id}
+	<select id="accountGetId" parameterType="com.globalin.lunchlive.account.Account" resultType="Integer">
+		SELECT COUNT(*) FROM users
+		WHERE
+		u_id = #{u_id}
 	</select>
-	
-	<insert id="join" parameterType="com.globalin.lunchlive.account.Account">
-	insert into users values(#{u_id}, #{u_pw},
-	#{u_nickname}, 0, sysdate)
+
+
+	<select id="getAccountByID" resultType="Account">
+		select * from users
+		where
+		u_id = #{u_id}
+	</select>
+
+	<insert id="join"
+		parameterType="com.globalin.lunchlive.account.Account">
+		insert into users values(#{u_id}, #{u_pw},
+		#{u_nickname}, 0, sysdate)
 	</insert>
 </mapper>

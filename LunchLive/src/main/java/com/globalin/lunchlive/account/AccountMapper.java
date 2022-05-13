@@ -6,4 +6,10 @@ public interface AccountMapper {
 
 	int join(Account account);
 
+	// 아이디 중복 체크
+	int accountGetId(Account account);
+
+	
+
+
 }

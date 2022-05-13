@@ -46,6 +46,8 @@ public class AccountDAO {
 	public void logout(HttpServletRequest request) {
 		request.getSession().setAttribute("loginAccount", null);
 	}
+	
+	
 
 
 	public void singUp(Account account, HttpServletRequest request) {
@@ -65,6 +67,17 @@ public class AccountDAO {
 		
 		
 	}
+
+	public int accountGetId(Account account, HttpServletRequest request) {
+		String id = request.getParameter("u_id");
+		account.setU_id(id);
+		
+		return ss.getMapper(AccountMapper.class).accountGetId(account);
+	}
+	
+
+	
+	
 
 	
 
