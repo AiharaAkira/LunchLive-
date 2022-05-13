@@ -9,21 +9,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 @Controller
 public class AccountController {
 
 	@Autowired
 	private AccountDAO ado;
 
-
-
-	@RequestMapping(value = "accountId.get", 
-			method = RequestMethod.POST, 
-			produces = "application/json; charset=utf-8")
-	public @ResponseBody int accountGetId(Account account, HttpServletRequest request) {
-		return ado.accountGetId(account, request);
-	}
 	
+	// id 중복 체크 컨트롤러
+		@RequestMapping(value = "/account.idCheck", method = RequestMethod.GET)
+		@ResponseBody
+		public int idCheck(@RequestParam("u_id") String u_id) {
+
+			return ado.userIdCheck(u_id);
+		}
+
 
 	@RequestMapping(value = "/findId.do", method = RequestMethod.GET)
 	public String findId(HttpServletRequest request) {

@@ -2,12 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.globalin.lunchlive.account.AccountMapper">
 
-	<select id="accountGetId" parameterType="com.globalin.lunchlive.account.Account" resultType="Integer">
-		SELECT COUNT(*) FROM users
-		WHERE
-		u_id = #{u_id}
+	
+	<select id="checkOverId" parameterType="String" resultType="Integer">
+	select count(*) from users where u_id = #{u_id}
 	</select>
-
 
 	<select id="getAccountByID" resultType="Account">
 		select * from users

@@ -2,14 +2,19 @@ package com.globalin.lunchlive.account;
 
 public interface AccountMapper {
 
-	Account getAccountByID(Account account);
-
+	// 회원가입
 	int join(Account account);
 
-	// 아이디 중복 체크
-	int accountGetId(Account account);
-
 	
+
+	// 로그인
+	Account getAccountByID(Account account);
+
+
+
+	int checkOverId(String u_id);
+
+
 
 
 }

@@ -2,7 +2,6 @@ package com.globalin.lunchlive.account;
 
 import java.math.BigDecimal;
 import java.sql.Date;
-
 public class Account {
 
 	private String u_id;
@@ -11,8 +10,8 @@ public class Account {
 	private BigDecimal typeOfManager;
 	private Date u_created_at;
 	
+
 	public Account() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getU_id() {

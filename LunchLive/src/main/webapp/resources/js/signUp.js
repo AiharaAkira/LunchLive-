@@ -1,39 +1,24 @@
-var idck = 0;
+// 아이디 유효성 검사(1 = 중복 / 0 != 중복)
 $(function() {
-    //idck 버튼을 클릭했을 때 
-    $("#idck").click(function() {
-        
-        //userid 를 param.
-        var userid =  $("#u_id").val(); 
-        
-        $.ajax({
-            async: true,
-            type : 'POST',
-            data : userid,
-            url : "accountId.get",
-            dataType : "json",
-            contentType: "application/json; charset=UTF-8",
-            success : function(data) {
-                if (data > 0) {
-                    
-                    alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
-                    //아이디가 존제할 경우 빨깡으로 , 아니면 파랑으로 처리하는 디자인
-                    $("#u_id").focus();
-                    
-                
-                } else {
-                    alert("사용가능한 아이디입니다.");
-                    //아이디가 존제할 경우 빨깡으로 , 아니면 파랑으로 처리하는 디자인
-                    $("#u_pwd").focus();
-                    //아이디가 중복하지 않으면  idck = 1 
-                    idck = 1;
-                    
-                }
-            },
-            error : function(error) {
-                
-                alert("error : " + error);
-            }
-        });
-    });
+	$("#idck").click(function() {
+		var u_id = $('#u_id').val();
+		$.ajax({
+			url : 'http://localhost/lunchlive/account.idCheck?u_id=' + u_id,
+			type : 'get',
+			success : function(data) {
+				console.log("1 = 중복o / 0 = 중복x : " + data);
+
+				if (data == 1) {
+					// 1 : 아이디가 중복되는 문구
+					alert("사용중인 아이디입니다 .");
+				} else {
+					alert("사용가능한 아이디입니다 .");
+				}
+			},
+			error : function() {
+				console.log("실패");
+			}
+		});
+	});
 });
+
