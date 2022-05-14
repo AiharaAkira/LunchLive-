@@ -15,7 +15,8 @@
 
 
 			<div>
-				<input placeholder="아이디" id="input_login_id" class="input_login" name="u_id">
+				<input placeholder="아이디" id="input_login_id" class="input_login"
+					name="u_id">
 			</div>
 			<div>
 				<input placeholder="비밀번호" class="input_login" name="u_pw">
@@ -27,12 +28,10 @@
 
 
 	<div>
-		<span id="login_menu_find_id" class="login_menu"
-			onclick="location.href='http://localhost/lunchlive/findPw.do'">비밀번호
-			찾기</span> <span class="login_menu"
-			onclick="location.href='http://localhost/lunchlive/findId.do'">아이디
-			찾기</span> <span class="login_menu"
-			onclick="location.href='http://localhost/lunchlive/signUp.go'">회원가입</span>
+		<a href="http://localhost/lunchlive/findPw.go" id="login_menu_find_id"
+			class="login_menu">비밀번호 찾기</a> 
+		<a href="http://localhost/lunchlive/findId.go" class="login_menu">아이디 찾기</a> 
+		<a href="http://localhost/lunchlive/signUp.go" class="login_menu">회원가입</a>
 	</div>
 	<br>
 	<div>footer</div>

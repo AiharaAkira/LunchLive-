@@ -2,9 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.globalin.lunchlive.account.AccountMapper">
 
+	<select id="findIdDo" parameterType="String" resultType="String">
+	select u_id from users where u_nickname = #{u_nickname}
+	</select>
 	
 	<select id="checkOverId" parameterType="String" resultType="Integer">
 	select count(*) from users where u_id = #{u_id}
+	</select>
+	
+	<select id="checkOverNickname" parameterType="String" resultType="Integer">
+	select count(*) from users where u_nickname = #{u_nickname}
 	</select>
 
 	<select id="getAccountByID" resultType="Account">
@@ -18,4 +25,8 @@
 		insert into users values(#{u_id}, #{u_pw},
 		#{u_nickname}, 0, sysdate)
 	</insert>
+	
+	<update id="findPwDo" parameterType="com.globalin.lunchlive.account.Account">
+		update users set u_pw = #{u_pw} where u_id = #{u_id}
+	</update>
 </mapper>

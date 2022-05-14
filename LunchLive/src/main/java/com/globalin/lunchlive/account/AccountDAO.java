@@ -75,6 +75,52 @@ public class AccountDAO {
 		return am.checkOverId(u_id);
 	}
 
+	public int userNicknameCheck(String u_nickname) {
+		
+		am = template.getMapper(AccountMapper.class);
+		return am.checkOverNickname(u_nickname);
+	}
+
+	public boolean loginCheckNoAccRes(HttpServletRequest request) {
+		Account account = (Account) request.getSession().getAttribute("loginAccount");
+
+		if (account != null) {
+			request.setAttribute("login", "loginOK.jsp");
+			return true;
+		} else {
+			request.setAttribute("login", "loginReady.jsp");
+			return false;
+
+		}
+	}
+
+	public void findIdDo(HttpServletRequest request, Account account) {
+		
+		String u_nickname = request.getParameter("u_nickname");
+		request.setAttribute("u_id", ss.getMapper(AccountMapper.class).findIdDo(u_nickname));
+		
+		
+	}
+
+	public void findPwDo(HttpServletRequest request, Account account) {
+		
+		String u_id =request.getParameter("u_id");
+		String u_pw =request.getParameter("u_pw");
+		
+		account.setU_id(u_id);
+		account.setU_pw(u_pw);
+		
+		if(ss.getMapper(AccountMapper.class).findPwDo(account)==1) {
+			
+			System.out.println("수정성공");
+		}else {
+			System.out.println("수정실패");
+		}
+		
+		
+		
+	}
+
 
 
 }

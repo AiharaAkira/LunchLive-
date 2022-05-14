@@ -24,21 +24,45 @@ public class AccountController {
 
 			return ado.userIdCheck(u_id);
 		}
+		
+		// 닉네임 중복 체크 컨트롤러
+				@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
+				@ResponseBody
+				public int nicknameCheck(@RequestParam("u_nickname") String u_nickname) {
+
+					return ado.userNicknameCheck(u_nickname);
+				}
 
 
-	@RequestMapping(value = "/findId.do", method = RequestMethod.GET)
-	public String findId(HttpServletRequest request) {
-
-		return "account/findId";
+	@RequestMapping(value = "/findId.go", method = RequestMethod.GET)
+	public String findIdGo(HttpServletRequest request) {
+		ado.loginCheckNoAccRes(request);
+		request.setAttribute("findAccounts", "findId.jsp");
+		return "account/findAccount";
+	}
+	
+	@RequestMapping(value = "/findId.do", method = RequestMethod.POST)
+	public String findIdDo(HttpServletRequest request, Account account) {
+		ado.loginCheckNoAccRes(request);
+		ado.findIdDo(request,account);
+		request.setAttribute("findAccounts", "findedId.jsp");
+		return "account/findAccount";
+	}
+	
+	@RequestMapping(value = "/findPw.do", method = RequestMethod.POST)
+	public String findPwDo(HttpServletRequest request, Account account) {
+		ado.findPwDo(request,account);
+		return "redirect:/login.do";
 	}
 
-	@RequestMapping(value = "/findPw.do", method = RequestMethod.GET)
-	public String findPw(HttpServletRequest request) {
-
-		return "account/findPw";
+	@RequestMapping(value = "/findPw.go", method = RequestMethod.GET)
+	public String findPwGo(HttpServletRequest request) {
+		ado.loginCheckNoAccRes(request);
+		request.setAttribute("findAccounts", "findPw.jsp");
+		return "account/findAccount";
 	}
 
-	@RequestMapping(value = "/signUp.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/signUp.do", method = RequestMethod.POST)
 	public String signUp(HttpServletRequest request, Account account) {
 
 		ado.singUp(account, request);

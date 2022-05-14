@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="findId.do" method="POST">
-	닉네임:<input name="u_nickname">
-	<button>아이디찾기</button>
-</form>
-
+아이디는 : ${u_id}
 </body>
 </html>

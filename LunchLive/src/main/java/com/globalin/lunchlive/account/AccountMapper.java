@@ -16,5 +16,17 @@ public interface AccountMapper {
 
 
 
+	int checkOverNickname(String u_nickname);
+
+
+
+	String findIdDo(String u_nickname);
+
+
+
+	int findPwDo(Account account);
+
+
+
 
 }
