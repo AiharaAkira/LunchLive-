@@ -75,6 +75,12 @@ public class AccountController {
 
 		return "account/signUp";
 	}
+	
+	@RequestMapping(value = "/terms.go", method = RequestMethod.GET)
+	public String termsGo(HttpServletRequest request, Account account) {
+
+		return "account/terms";
+	}
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String login(HttpServletRequest request) {
@@ -83,7 +89,7 @@ public class AccountController {
 		return "account/loginPage";
 	}
 
-	@RequestMapping(value = "/login.get", method = RequestMethod.GET)
+	@RequestMapping(value = "/login.get", method = RequestMethod.POST)
 	public String loginGet(HttpServletRequest request, Account account) {
 		// 로그인
 		ado.login(request, account);

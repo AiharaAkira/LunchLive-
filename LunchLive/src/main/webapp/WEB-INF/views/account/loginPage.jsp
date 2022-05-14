@@ -11,7 +11,7 @@
 	<div id="logo" onclick="location.href='http://localhost/lunchlive/'">logo</div>
 
 	<div id="login_box">
-		<form action="login.get">
+		<form action="login.get" method="post">
 
 
 			<div>
@@ -31,7 +31,7 @@
 		<a href="http://localhost/lunchlive/findPw.go" id="login_menu_find_id"
 			class="login_menu">비밀번호 찾기</a> 
 		<a href="http://localhost/lunchlive/findId.go" class="login_menu">아이디 찾기</a> 
-		<a href="http://localhost/lunchlive/signUp.go" class="login_menu">회원가입</a>
+		<a href="http://localhost/lunchlive/terms.go" class="login_menu">회원가입</a>
 	</div>
 	<br>
 	<div>footer</div>

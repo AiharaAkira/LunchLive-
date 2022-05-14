@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+	text-align: center;
+}
+
+
+
+.article_title {
+	padding-bottom: 8px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+}
+
+#terms_div_first {
+	
+}
+
+.terms_div {
+	margin: 0 auto;
+	overflow: auto;
+	width: 30%;
+	height: 88px;
+	margin-top: 8px;
+	padding: 12px;
+	border: 1px solid #dadada;
+	background: #fff;
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 16px;
+	color: #666;
+}

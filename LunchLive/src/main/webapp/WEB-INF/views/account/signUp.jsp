@@ -10,7 +10,7 @@
 </head>
 <body>
 	회원가입페이지
-	<form action="signUp.do">
+	<form action="signUp.do" method="post">
 		아이디<input id="u_id" name="u_id">
 		<button type="button" id="idck">아이디중복 검사</button>
 		<br> 비밀번호<input id="u_pw" name="u_pw"><br> pw확인<input><br>
