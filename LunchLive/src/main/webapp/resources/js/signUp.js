@@ -1,3 +1,6 @@
+let cntId = 2;
+let cntNick = 2;
+
 $(function() {
 // 아이디 유효성 검사(1 = 중복 / 0 != 중복)
 	$("#idck").click(function() {
@@ -7,11 +10,13 @@ $(function() {
 			type : 'get',
 			success : function(data) {
 				console.log("1 = 중복o / 0 = 중복x : " + data);
-
+				
 				if (data == 1) {
 					// 1 : 아이디가 중복되는 문구
+					cntId == 1;
 					alert("사용중인 아이디입니다 .");
 				} else {
+					cntId = 0;
 					alert("사용가능한 아이디입니다 .");
 				}
 			},
@@ -32,8 +37,10 @@ $(function() {
 
 				if (data == 1) {
 					// 1 : 아이디가 중복되는 문구
+					cntNick==1;
 					alert("사용중인 닉네임입니다 .");
 				} else {
+					cntNick = 0;
 					alert("사용가능한 닉네임입니다 .");
 				}
 			},
@@ -42,5 +49,9 @@ $(function() {
 			}
 		});
 	});
+	
+	
 });
+
+
 

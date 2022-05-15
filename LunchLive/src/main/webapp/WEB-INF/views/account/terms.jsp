@@ -33,9 +33,9 @@
 		약관약관약관약관약관약관약관약관약관약관약관약관약관
 		약관약관약관약관약관약관약관약관약관약관약관약관약관</p>
 	</div>
-	<input type="checkbox">동의합니다
-	<button type="button">취소</button><button>확인</button>
+	<input type="checkbox">동의합니다<br>
+	<button onclick="location.href='http://localhost/lunchlive/'" class="terms_btn_default" type="button">취소</button><button id="terms_btn_accept" class="terms_btn_default">확인</button>
 	</form>
-<div>footer</div>
+<div >footer</div>
 </body>
 </html>

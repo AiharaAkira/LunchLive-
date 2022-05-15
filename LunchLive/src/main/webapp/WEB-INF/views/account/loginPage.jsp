@@ -5,13 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="resources/js/jQuery.js" type="text/javascript"></script>
+<script src="resources/js/loginPage.js" type="text/javascript"></script>
 <link rel="stylesheet" href="resources/css/loginPage.css"></link>
 </head>
 <body>
 	<div id="logo" onclick="location.href='http://localhost/lunchlive/'">logo</div>
 
 	<div id="login_box">
-		<form action="login.get" method="post">
+		<form name="form" action="login.get" method="post" onsubmit="return call();">
 
 
 			<div>
@@ -19,7 +21,7 @@
 					name="u_id">
 			</div>
 			<div>
-				<input placeholder="비밀번호" class="input_login" name="u_pw">
+				<input placeholder="비밀번호" class="input_login" id="input_login_pw" name="u_pw">
 			</div>
 			<button id="login_btn">로그인</button>
 		</form>

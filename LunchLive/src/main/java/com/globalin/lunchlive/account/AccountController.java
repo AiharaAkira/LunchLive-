@@ -25,6 +25,14 @@ public class AccountController {
 			return ado.userIdCheck(u_id);
 		}
 		
+		// id 중복 체크 컨트롤러
+				@RequestMapping(value = "/account.idPwCheck", method = RequestMethod.POST)
+				@ResponseBody
+				public int idPwCheck(@RequestParam("u_id") String u_id,@RequestParam("u_pw") String u_pw) {
+
+					return ado.userIdPwCheck(u_id,u_pw);
+				}
+		
 		// 닉네임 중복 체크 컨트롤러
 				@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
 				@ResponseBody

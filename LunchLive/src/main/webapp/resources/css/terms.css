@@ -2,6 +2,7 @@
 
 body {
 	text-align: center;
+	background: #f5f6f7;
 }
 
 
@@ -31,3 +32,22 @@ body {
 	line-height: 16px;
 	color: #666;
 }
+
+.terms_btn_default {
+	border: 1px solid #5b5b5b;
+	font-weight: 400;
+	color: #fff;
+	background-color: #8e8e8e;
+	padding: 15px 0 15px;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	width:140px;
+	margin:10px;5px;
+}
+
+#terms_btn_accept{
+	border: 1px solid #ce7e00;
+	background-color: orange;
+	}

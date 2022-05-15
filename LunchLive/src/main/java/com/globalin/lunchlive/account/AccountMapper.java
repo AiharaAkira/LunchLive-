@@ -28,5 +28,9 @@ public interface AccountMapper {
 
 
 
+	int checkOverIdPw(String u_id, String u_pw);
+
+
+
 
 }

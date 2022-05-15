@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-로그인성공~<button onclick="location.href='http://localhost/lunchlive/logOut.do'">로그아웃</button>
+[${sessionScope.loginAccount.u_nickname}]님 환영합니다
+<button onclick="location.href='http://localhost/lunchlive/logOut.do'">로그아웃</button>
 
 </body>
 </html>

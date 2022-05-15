@@ -121,6 +121,13 @@ public class AccountDAO {
 		
 	}
 
+	//idpw찾기, 로그인
+	public int userIdPwCheck(String u_id, String u_pw) {
+		
+		am = template.getMapper(AccountMapper.class);
+		return am.checkOverIdPw(u_id, u_pw);
+	}
+
 
 
 }
