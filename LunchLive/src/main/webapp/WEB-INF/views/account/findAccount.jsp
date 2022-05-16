@@ -10,7 +10,7 @@
 <body>
 <div id="header_wrap">
 <div id="header_wrap_first">
-	<ul><li><a>logo</a></li><li id="af_login"><jsp:include page="${login}"></jsp:include></li></ul>
+	<ul><li><a onclick="location.href='http://localhost/lunchlive/'">logo</a></li><li id="af_login"><button onclick="location.href='http://localhost/lunchlive/login.do'" id="fa_login_btn">로그인</button></li></ul>
 </div>
 <div id="header_wrap_second">
 	<a class="fa_menu" onclick="location.href='http://localhost/lunchlive/findId.go'">아이디찾기</a><a class="fa_menu" onclick="location.href='http://localhost/lunchlive/findPw.go'">비밀번호찾기</a>

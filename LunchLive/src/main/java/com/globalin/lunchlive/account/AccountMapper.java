@@ -1,5 +1,7 @@
 package com.globalin.lunchlive.account;
 
+import java.util.Map;
+
 public interface AccountMapper {
 
 	// 회원가입
@@ -28,7 +30,10 @@ public interface AccountMapper {
 
 
 
-	int checkOverIdPw(String u_id, String u_pw);
+
+
+
+	int checkOverIdPw(Map<String, String> users);
 
 
 

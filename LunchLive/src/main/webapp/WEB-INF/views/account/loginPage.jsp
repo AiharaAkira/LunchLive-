@@ -6,14 +6,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="resources/js/jQuery.js" type="text/javascript"></script>
-<script src="resources/js/loginPage.js" type="text/javascript"></script>
+<script src="resources/js/validCheck.js" type="text/javascript"></script>
+
 <link rel="stylesheet" href="resources/css/loginPage.css"></link>
 </head>
 <body>
 	<div id="logo" onclick="location.href='http://localhost/lunchlive/'">logo</div>
 
 	<div id="login_box">
-		<form name="form" action="login.get" method="post" onsubmit="return call();">
+		<form id="form" name="form" action="login.get" method="post" onsubmit="return call();">
 
 
 			<div>
@@ -37,5 +38,6 @@
 	</div>
 	<br>
 	<div>footer</div>
+	<script src="resources/js/loginPage.js" type="text/javascript"></script>
 </body>
 </html>

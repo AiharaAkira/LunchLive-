@@ -25,12 +25,21 @@ public class AccountController {
 			return ado.userIdCheck(u_id);
 		}
 		
+		
 		// id 중복 체크 컨트롤러
+				@RequestMapping(value = "/account.nicknameCheckOnFind", method = RequestMethod.GET)
+				@ResponseBody
+				public int nicknameCheckOnFind(@RequestParam("u_nickname") String u_nickname) {
+
+					return ado.userNicknameCheck(u_nickname);
+				}
+		
+		// idpw 중복 체크 컨트롤러
 				@RequestMapping(value = "/account.idPwCheck", method = RequestMethod.POST)
 				@ResponseBody
-				public int idPwCheck(@RequestParam("u_id") String u_id,@RequestParam("u_pw") String u_pw) {
+				public int idPwCheck(HttpServletRequest request) {
 
-					return ado.userIdPwCheck(u_id,u_pw);
+					return ado.userIdPwCheck(request);
 				}
 		
 		// 닉네임 중복 체크 컨트롤러

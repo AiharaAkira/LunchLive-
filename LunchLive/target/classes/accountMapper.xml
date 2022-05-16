@@ -10,8 +10,8 @@
 	select count(*) from users where u_id = #{u_id}
 	</select>
 	
-	<select id="checkOverIdPw" parameterType="String" resultType="Integer">
-	select count(*) from users where u_id = #{u_id} and u_pw =#{u_pw}
+	<select id="checkOverIdPw" parameterType="Map" resultType="Integer">
+	select count(*) from users where u_id = #{u_id} and u_pw = #{u_pw}
 	</select>
 	
 	<select id="checkOverNickname" parameterType="String" resultType="Integer">

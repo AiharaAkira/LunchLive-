@@ -123,7 +123,7 @@
 </head>
 <body>
 	<div>
-		<div>logo</div>
+		<div onclick="location.href='http://localhost/lunchlive/'">logo</div>
 		<div>
 			<input id="search" placeholder="검색!!">
 			<hr>

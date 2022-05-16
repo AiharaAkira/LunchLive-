@@ -1,5 +1,8 @@
 package com.globalin.lunchlive.account;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
@@ -122,10 +125,12 @@ public class AccountDAO {
 	}
 
 	//idpw찾기, 로그인
-	public int userIdPwCheck(String u_id, String u_pw) {
-		
+	public int userIdPwCheck(HttpServletRequest request) {
+		Map<String, String> users = new HashMap<>();
+		users.put("u_id", request.getParameter("u_id"));
+		users.put("u_pw", request.getParameter("u_pw"));
 		am = template.getMapper(AccountMapper.class);
-		return am.checkOverIdPw(u_id, u_pw);
+		return am.checkOverIdPw(users);
 	}
 
 
