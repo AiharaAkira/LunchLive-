@@ -18,7 +18,6 @@ public interface AccountMapper {
 
 
 
-	int checkOverNickname(String u_nickname);
 
 
 
@@ -34,6 +33,10 @@ public interface AccountMapper {
 
 
 	int checkOverIdPw(Map<String, String> users);
+
+
+
+	int checkOverNickname(String u_nickname);
 
 
 

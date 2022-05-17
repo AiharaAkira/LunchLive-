@@ -6,7 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link rel="stylesheet" href="resources/css/findedId.css">
 <body>
-아이디는 : ${u_id}
+<div id="fdi_box">
+
+	<div id="fdi_txt">아이디는 : ${u_id}</div>
+</div>
+
 </body>
 </html>

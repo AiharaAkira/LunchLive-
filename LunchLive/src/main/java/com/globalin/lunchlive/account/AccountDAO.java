@@ -1,9 +1,11 @@
 package com.globalin.lunchlive.account;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -17,24 +19,26 @@ public class AccountDAO {
 	SqlSession ss;
 	@Autowired
 	SqlSessionTemplate template;
-	private  AccountMapper am;
+	private AccountMapper am;
 
-	public void login(HttpServletRequest request, Account account) {
+	public void login(HttpServletRequest request, Account account, HttpServletResponse response) throws IOException {
 
 		Account dbAccount = ss.getMapper(AccountMapper.class).getAccountByID(account);
 
-		if (dbAccount != null) {
-			if (account.getU_pw().equals(dbAccount.getU_pw())) {
-				request.getSession().setAttribute("loginAccount", dbAccount);
-				request.getSession().setMaxInactiveInterval(60 * 10);
+		
+			if (dbAccount != null) {
+				if (account.getU_pw().equals(dbAccount.getU_pw())) {
+					request.getSession().setAttribute("loginAccount", dbAccount);
+					request.getSession().setMaxInactiveInterval(60 * 10);
+				} else {
+					System.out.println("비밀번호다름_로그인실패!");
+				}
 			} else {
-				System.out.println("비밀번호다름_로그인실패!");
+				System.out.println("미가입 id_로그인실패");
 			}
-		} else {
-			System.out.println("미가입 id_로그인실패");
 		}
 
-	}
+	
 
 	public boolean loginCheck(HttpServletRequest request) {
 		Account account = (Account) request.getSession().getAttribute("loginAccount");
@@ -55,6 +59,7 @@ public class AccountDAO {
 	}
 
 	public void singUp(Account account, HttpServletRequest request) {
+
 		String id = request.getParameter("u_id");
 		String pw = request.getParameter("u_pw");
 		String nickname = request.getParameter("u_nickname");
@@ -72,14 +77,14 @@ public class AccountDAO {
 	}
 
 	public int userIdCheck(String u_id) {
-		
+
 		am = template.getMapper(AccountMapper.class);
-		
+
 		return am.checkOverId(u_id);
 	}
 
 	public int userNicknameCheck(String u_nickname) {
-		
+
 		am = template.getMapper(AccountMapper.class);
 		return am.checkOverNickname(u_nickname);
 	}
@@ -98,41 +103,40 @@ public class AccountDAO {
 	}
 
 	public void findIdDo(HttpServletRequest request, Account account) {
-		
+
 		String u_nickname = request.getParameter("u_nickname");
 		request.setAttribute("u_id", ss.getMapper(AccountMapper.class).findIdDo(u_nickname));
-		
-		
+
 	}
 
 	public void findPwDo(HttpServletRequest request, Account account) {
-		
-		String u_id =request.getParameter("u_id");
-		String u_pw =request.getParameter("u_pw");
-		
+
+		String u_id = request.getParameter("u_id");
+		String u_pw = request.getParameter("u_pw");
+
 		account.setU_id(u_id);
 		account.setU_pw(u_pw);
-		
-		if(ss.getMapper(AccountMapper.class).findPwDo(account)==1) {
-			
+
+		if (ss.getMapper(AccountMapper.class).findPwDo(account) == 1) {
+
 			System.out.println("수정성공");
-		}else {
+		} else {
 			System.out.println("수정실패");
 		}
-		
-		
-		
+
 	}
 
-	//idpw찾기, 로그인
-	public int userIdPwCheck(HttpServletRequest request) {
+	// idpw찾기, 로그인
+	public int userIdPwCheck(HttpServletRequest request, HttpServletResponse response, Account a) throws IOException {
+		response.setContentType("text/html; charset=UTF-8");
+
 		Map<String, String> users = new HashMap<>();
-		users.put("u_id", request.getParameter("u_id"));
-		users.put("u_pw", request.getParameter("u_pw"));
-		am = template.getMapper(AccountMapper.class);
+
+			users.put("u_id", request.getParameter("u_id"));
+			users.put("u_pw", request.getParameter("u_pw"));
+			am = template.getMapper(AccountMapper.class);
+		
 		return am.checkOverIdPw(users);
 	}
-
-
 
 }

@@ -172,6 +172,7 @@ function call() {
 	//아이디
 	if(isEmpty(u_id) || lessThan(u_id, 7) || moreThan(u_id, 20) || CheckID(u_id.value) || checkSpace(u_id.value)){
 		alert("아이디를 확인해 주세요");
+		alert("아이디는 숫자와 영문자 조합으로 8~20자리를 사용해야 합니다.");
 		u_id.value = "";
 		u_id.focus();
 		return false;
@@ -180,6 +181,7 @@ function call() {
 	//비밀번호: 빈칸x 영어+숫자+특수문자 + 공백x 8자이상
 	if (isEmpty(u_pw) || lessThan(u_pw, 8) || checkSpace(u_pw.value) || checkKor(u_pw.value) || CheckPassword(u_pw.value)) {
 		alert("비밀번호를 확인해 주세요");
+		alert("아이디는 숫자와 영문자 및 특수문자 조합으로 8~20자리를 사용해야 합니다.");
 		u_pw.value = "";
 		u_pw.focus();
 		return false;
@@ -194,7 +196,8 @@ function call() {
 	
 	//닉네임: 빈칸x 한글+영어+숫자 공백x 10자~20자
 	if (isEmpty(u_nickname) || lessThan(u_nickname, 2) || moreThan(u_nickname, 20) || checkSpace(u_nickname.value) || (pattern_spc.test(u_nickname.value))) {
-		alert("닉네임을 확인해 주세요");
+		alert("닉네임을 확인해주세요.");
+		alert("닉네임은 특수문자를 포함하지 않아야 합니다.");
 		u_nickname.value = "";
 		u_nickname.focus();
 		return false;
@@ -211,7 +214,7 @@ function call() {
 		alert("닉네임 중복체크를 해주세요");
 		return false;
 	}
-	
+	confirm("회원가입 하시겠습니까?");
 	alert("회원가입 되셨습니다! 환영합니다:)");
 	return true;
 }

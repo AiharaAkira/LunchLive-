@@ -31,7 +31,7 @@ $(function() {
 			type : 'post',
 			success : function(data) {
 				console.log("1 = 중복o / 0 = 중복x : " + data);
-				if (data == 0) {
+				if (data == 0&&u_id&&u_pw) {
 					alert("아이디 혹은 비밀번호가 잘못 되었습니다.");
 					location.href='http://localhost/lunchlive/login.do';
 				}else{

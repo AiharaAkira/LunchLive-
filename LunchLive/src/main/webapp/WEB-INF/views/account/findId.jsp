@@ -15,6 +15,7 @@
 	<div class="fp_txt">닉네임</div><input id="u_nickname" class="fp_input" name="u_nickname">
 	<br><button id="fp_submit_btn">아이디찾기</button>
 </form>
+<script src="resources/js/findId.js" type="text/javascript"></script>
 
 </body>
 </html>

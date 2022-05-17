@@ -1,6 +1,9 @@
 package com.globalin.lunchlive.account;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,9 +28,17 @@ public class AccountController {
 			return ado.userIdCheck(u_id);
 		}
 		
-		
 		// id 중복 체크 컨트롤러
-				@RequestMapping(value = "/account.nicknameCheckOnFind", method = RequestMethod.GET)
+				@RequestMapping(value = "/account.idCheckOnFind", method = RequestMethod.POST)
+				@ResponseBody
+				public int idCheckOnFind(@RequestParam("u_id") String u_id) {
+
+					return ado.userIdCheck(u_id);
+				}
+		
+		
+		// 닉네임찾기 컨트롤러
+				@RequestMapping(value = "/account.nicknameCheckOnFind", method = RequestMethod.POST)
 				@ResponseBody
 				public int nicknameCheckOnFind(@RequestParam("u_nickname") String u_nickname) {
 
@@ -37,9 +48,9 @@ public class AccountController {
 		// idpw 중복 체크 컨트롤러
 				@RequestMapping(value = "/account.idPwCheck", method = RequestMethod.POST)
 				@ResponseBody
-				public int idPwCheck(HttpServletRequest request) {
+				public int idPwCheck(HttpServletRequest request,HttpServletResponse response,Account a) throws IOException {
 
-					return ado.userIdPwCheck(request);
+					return ado.userIdPwCheck(request, response, a);
 				}
 		
 		// 닉네임 중복 체크 컨트롤러
@@ -107,9 +118,9 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = "/login.get", method = RequestMethod.POST)
-	public String loginGet(HttpServletRequest request, Account account) {
+	public String loginGet(HttpServletRequest request, Account account, HttpServletResponse response) throws IOException {
 		// 로그인
-		ado.login(request, account);
+		ado.login(request, account, response);
 		ado.loginCheck(request);
 		return "index";
 	}

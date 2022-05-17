@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#fdi_box{
+	text-align:center;
+	margin:10% auto;
+	width:300px;
+	height:300px;
+	border: 1px solid #c6c6c6;
+	box-shadow: 0 5px 8px 0 rgb(68 68 68 / 4%);
+	border-radius: 5px;
+}
+
+#fdi_txt{
+	margin-top: 45%;
+}
