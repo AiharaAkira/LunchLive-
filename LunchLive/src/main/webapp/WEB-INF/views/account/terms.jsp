@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
+<title>LunchLive!</title>
 <link rel="stylesheet" href="resources/css/terms.css">
 <script src="resources/js/validCheck.js" type="text/javascript"></script>
 </head>

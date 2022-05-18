@@ -13,4 +13,8 @@
 	<select id="account" parameterType="Map" resultType="com.globalin.lunchlive.account.Account">
 	select * from users where u_id = #{u_id} and u_pw = #{u_pw} 
 	</select>
+	
+	<delete id="deleteAccount" parameterType="com.globalin.lunchlive.account.Account">
+	delete from users where u_id = #{u_id} and u_pw = #{u_pw} and u_nickname = #{u_nickname}
+	</delete>
 </mapper>

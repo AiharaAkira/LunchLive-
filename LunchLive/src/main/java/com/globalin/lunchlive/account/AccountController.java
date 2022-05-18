@@ -41,7 +41,7 @@ public class AccountController {
 				@RequestMapping(value = "/account.nicknameCheckOnFind", method = RequestMethod.POST)
 				@ResponseBody
 				public int nicknameCheckOnFind(@RequestParam("u_nickname") String u_nickname) {
-
+					
 					return ado.userNicknameCheck(u_nickname);
 				}
 		
@@ -49,7 +49,7 @@ public class AccountController {
 				@RequestMapping(value = "/account.idPwCheck", method = RequestMethod.POST)
 				@ResponseBody
 				public int idPwCheck(HttpServletRequest request,HttpServletResponse response,Account a) throws IOException {
-
+					
 					return ado.userIdPwCheck(request, response, a);
 				}
 		
@@ -57,7 +57,7 @@ public class AccountController {
 				@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
 				@ResponseBody
 				public int nicknameCheck(@RequestParam("u_nickname") String u_nickname) {
-
+					
 					return ado.userNicknameCheck(u_nickname);
 				}
 
@@ -67,6 +67,19 @@ public class AccountController {
 		ado.loginCheckNoAccRes(request);
 		request.setAttribute("findAccounts", "findId.jsp");
 		return "account/findAccount";
+	}
+	
+	@RequestMapping(value = "/withdrawal.go", method = RequestMethod.GET)
+	public String withdrawlGo(HttpServletRequest request) {
+		ado.loginCheck(request);
+		return "withdrawal";
+	}
+	
+	@RequestMapping(value = "/withdrawal.do", method = RequestMethod.GET)
+	public String withdrawlDo(HttpServletRequest request, Account a) {
+		ado.deleteAccount(request, a);
+		ado.loginCheck(request);
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/findId.do", method = RequestMethod.POST)

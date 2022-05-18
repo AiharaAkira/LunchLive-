@@ -40,5 +40,9 @@ public interface AccountMapper {
 
 
 
+	int deleteAccount(Account a);
+
+
+
 
 }

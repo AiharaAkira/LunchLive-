@@ -139,4 +139,28 @@ public class AccountDAO {
 		return am.checkOverIdPw(users);
 	}
 
+
+
+	public void deleteAccount(HttpServletRequest request, Account a) {
+
+		String u_id = request.getParameter("u_id");
+		String u_pw = request.getParameter("u_pw");
+		String u_nickname = request.getParameter("u_nickname");
+		
+		a.setU_id(u_id);
+		a.setU_pw(u_pw);
+		a.setU_nickname(u_nickname);
+		
+		if(ss.getMapper(AccountMapper.class).deleteAccount(a)==1) {
+			System.out.println("회원삭제 성공!");
+		}else {
+			System.out.println("회원삭제 실패!");
+			
+		}
+		
+		
+		
+		
+	}
+
 }
