@@ -12,55 +12,51 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 @Controller
 public class AccountController {
 
 	@Autowired
 	private AccountDAO ado;
 
-	
 	// id 중복 체크 컨트롤러
-		@RequestMapping(value = "/account.idCheck", method = RequestMethod.GET)
-		@ResponseBody
-		public int idCheck(@RequestParam("u_id") String u_id) {
+	@RequestMapping(value = "/account.idCheck", method = RequestMethod.GET)
+	@ResponseBody
+	public int idCheck(@RequestParam("u_id") String u_id) {
 
-			return ado.userIdCheck(u_id);
-		}
-		
-		// id 중복 체크 컨트롤러
-				@RequestMapping(value = "/account.idCheckOnFind", method = RequestMethod.POST)
-				@ResponseBody
-				public int idCheckOnFind(@RequestParam("u_id") String u_id) {
+		return ado.userIdCheck(u_id);
+	}
 
-					return ado.userIdCheck(u_id);
-				}
-		
-		
-		// 닉네임찾기 컨트롤러
-				@RequestMapping(value = "/account.nicknameCheckOnFind", method = RequestMethod.POST)
-				@ResponseBody
-				public int nicknameCheckOnFind(@RequestParam("u_nickname") String u_nickname) {
-					
-					return ado.userNicknameCheck(u_nickname);
-				}
-		
-		// idpw 중복 체크 컨트롤러
-				@RequestMapping(value = "/account.idPwCheck", method = RequestMethod.POST)
-				@ResponseBody
-				public int idPwCheck(HttpServletRequest request,HttpServletResponse response,Account a) throws IOException {
-					
-					return ado.userIdPwCheck(request, response, a);
-				}
-		
-		// 닉네임 중복 체크 컨트롤러
-				@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
-				@ResponseBody
-				public int nicknameCheck(@RequestParam("u_nickname") String u_nickname) {
-					
-					return ado.userNicknameCheck(u_nickname);
-				}
+	// id 중복 체크 컨트롤러
+	@RequestMapping(value = "/account.idCheckOnFind", method = RequestMethod.POST)
+	@ResponseBody
+	public int idCheckOnFind(@RequestParam("u_id") String u_id) {
 
+		return ado.userIdCheck(u_id);
+	}
+
+	// 닉네임찾기 컨트롤러
+	@RequestMapping(value = "/account.nicknameCheckOnFind", method = RequestMethod.POST)
+	@ResponseBody
+	public int nicknameCheckOnFind(@RequestParam("u_nickname") String u_nickname) {
+
+		return ado.userNicknameCheck(u_nickname);
+	}
+
+	// idpw 중복 체크 컨트롤러
+	@RequestMapping(value = "/account.idPwCheck", method = RequestMethod.POST)
+	@ResponseBody
+	public int idPwCheck(HttpServletRequest request, Account a) {
+
+		return ado.userIdPwCheck(request, a);
+	}
+
+	// 닉네임 중복 체크 컨트롤러
+	@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
+	@ResponseBody
+	public int nicknameCheck(@RequestParam("u_nickname") String u_nickname) {
+
+		return ado.userNicknameCheck(u_nickname);
+	}
 
 	@RequestMapping(value = "/findId.go", method = RequestMethod.GET)
 	public String findIdGo(HttpServletRequest request) {
@@ -68,31 +64,31 @@ public class AccountController {
 		request.setAttribute("findAccounts", "findId.jsp");
 		return "account/findAccount";
 	}
-	
+
 	@RequestMapping(value = "/withdrawal.go", method = RequestMethod.GET)
 	public String withdrawlGo(HttpServletRequest request) {
 		ado.loginCheck(request);
-		return "withdrawal";
+		return "account/withdrawal";
 	}
-	
-	@RequestMapping(value = "/withdrawal.do", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/withdrawal.do", method = RequestMethod.POST)
 	public String withdrawlDo(HttpServletRequest request, Account a) {
 		ado.deleteAccount(request, a);
 		ado.loginCheck(request);
 		return "redirect:/";
 	}
-	
+
 	@RequestMapping(value = "/findId.do", method = RequestMethod.POST)
 	public String findIdDo(HttpServletRequest request, Account account) {
 		ado.loginCheckNoAccRes(request);
-		ado.findIdDo(request,account);
+		ado.findIdDo(request, account);
 		request.setAttribute("findAccounts", "findedId.jsp");
 		return "account/findAccount";
 	}
-	
+
 	@RequestMapping(value = "/findPw.do", method = RequestMethod.POST)
 	public String findPwDo(HttpServletRequest request, Account account) {
-		ado.findPwDo(request,account);
+		ado.findPwDo(request, account);
 		return "redirect:/login.do";
 	}
 
@@ -116,7 +112,7 @@ public class AccountController {
 
 		return "account/signUp";
 	}
-	
+
 	@RequestMapping(value = "/terms.go", method = RequestMethod.GET)
 	public String termsGo(HttpServletRequest request, Account account) {
 
@@ -131,7 +127,8 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = "/login.get", method = RequestMethod.POST)
-	public String loginGet(HttpServletRequest request, Account account, HttpServletResponse response) throws IOException {
+	public String loginGet(HttpServletRequest request, Account account, HttpServletResponse response)
+			throws IOException {
 		// 로그인
 		ado.login(request, account, response);
 		ado.loginCheck(request);

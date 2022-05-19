@@ -127,8 +127,7 @@ public class AccountDAO {
 	}
 
 	// idpw찾기, 로그인
-	public int userIdPwCheck(HttpServletRequest request, HttpServletResponse response, Account a) throws IOException {
-		response.setContentType("text/html; charset=UTF-8");
+	public int userIdPwCheck(HttpServletRequest request,  Account a)  {
 
 		Map<String, String> users = new HashMap<>();
 

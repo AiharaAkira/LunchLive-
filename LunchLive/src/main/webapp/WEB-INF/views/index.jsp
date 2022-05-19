@@ -134,5 +134,6 @@
 		<div>게임</div>
 		<div><jsp:include page="${login}"></jsp:include></div>
 	</div>
+	<button onclick="location.href='http://localhost/lunchlive/withdrawal.go'">회원탈퇴</button>
 </body>
 </html>
