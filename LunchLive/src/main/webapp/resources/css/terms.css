@@ -6,6 +6,9 @@ body {
 }
 
 
+#logo img{
+	width:15%;
+}
 
 .article_title {
 	padding-bottom: 8px;

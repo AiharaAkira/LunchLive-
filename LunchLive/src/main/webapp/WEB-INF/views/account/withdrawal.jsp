@@ -11,7 +11,7 @@
 <title>LunchLive!</title>
 </head>
 <body>
-	<div id="logo">logo</div>
+	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.jpg"></div>
 	
 	<form id="login_box" action="withdrawal.do" method="post" onsubmit="return call();">
 
@@ -29,7 +29,7 @@
 
 		<br><button id="withdrawal_btn">회원탈퇴</button>
 	</form>
-	
+	<div id="footer">footer</div>
 	<script src="resources/js/withrawal.js" type="text/javascript"></script>
 </body>
 </html>

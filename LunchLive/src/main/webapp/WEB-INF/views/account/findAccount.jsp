@@ -17,9 +17,9 @@
 	<a class="fa_menu" onclick="location.href='http://localhost/lunchlive/findId.go'">아이디찾기</a><a class="fa_menu" onclick="location.href='http://localhost/lunchlive/findPw.go'">비밀번호찾기</a>
 </div>
 </div>
-<div>
+<div id="fa_idpwbox_warraper">
 	<jsp:include page="${findAccounts}"></jsp:include>
 </div>
-<div id="fa_footer">footer</div>
+<div id="footer">footer</div>
 </body>
 </html>
