@@ -8,7 +8,7 @@ u_created_at date not null,
 constraint users_PK primary key(u_id, u_nickname)  
 );
 
-insert into users values('id','pw','닉네임',1,sysdate);
+insert into users values('a','a','a',0,sysdate);
 //유저 조회
 select * from USERS;
 

@@ -6,6 +6,15 @@ body {
 	
 }
 
+#logo {
+	text-align: center;
+	margint: 0 auto;
+}
+
+#logo img {
+	width: 15%;
+}
+
 
 .input_login{
 	border: 1px solid #c6c6c6;

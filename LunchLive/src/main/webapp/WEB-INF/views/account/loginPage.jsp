@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="resources/css/loginPage.css"></link>
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://localhost/lunchlive/'">logo</div>
+	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.png"></div>
 
 	<div id="login_box">
 		<form id="form" name="form" action="login.get" method="post" onsubmit="return call();">

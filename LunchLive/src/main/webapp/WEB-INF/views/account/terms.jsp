@@ -10,7 +10,7 @@
 <script src="resources/js/validCheck.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.jpg"></div>
+	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.png"></div>
 	<form action="signUp.go" onsubmit="return call();">
 	<div class="terms_div" id="terms_div_first">
 		<h3 class="article_title">제1약관</h3>

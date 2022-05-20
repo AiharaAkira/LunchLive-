@@ -50,6 +50,14 @@ public class AccountController {
 		return ado.userIdPwCheck(request, a);
 	}
 
+	// 회원삭제시 중복 체크 컨트롤러
+		@RequestMapping(value = "/account.idPwNicknameCheck", method = RequestMethod.POST)
+		@ResponseBody
+		public int idPwNicknameCheck(HttpServletRequest request, Account a) {
+
+			return ado.idPwNicknameCheck(request, a);
+		}
+	
 	// 닉네임 중복 체크 컨트롤러
 	@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
 	@ResponseBody

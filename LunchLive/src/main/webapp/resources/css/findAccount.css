@@ -5,6 +5,15 @@ html, body {
 	padding: 0;
 }
 
+#logo {
+	text-align: center;
+	margint: 0 auto;
+}
+
+#logo img {
+	width: 5%;
+}
+
 #fa_wrapper {
 	width: 100%;
 }

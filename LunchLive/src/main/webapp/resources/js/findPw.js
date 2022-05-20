@@ -25,7 +25,7 @@ function call(){
 		u_pwCheck.focus();
 		return false;
 	}
-	
+	alert('비밀번호가 변경 되었습니다.');
 	return true;
 	
 }
@@ -45,8 +45,7 @@ $(function() {
 					location.href='http://localhost/lunchlive/findPw.go';
 				}else{
 					console.log("비번찾기");
-					confirm("비밀번호를 변경하시겠습니까?");
-					alert('비밀번호가 변경 되었습니다.');
+					
 					
 				}
 			},

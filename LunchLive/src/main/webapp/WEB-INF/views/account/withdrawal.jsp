@@ -11,7 +11,7 @@
 <title>LunchLive!</title>
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.jpg"></div>
+	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.png"></div>
 	
 	<form id="login_box" action="withdrawal.do" method="post" onsubmit="return call();">
 

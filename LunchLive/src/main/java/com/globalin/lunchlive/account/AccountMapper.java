@@ -22,6 +22,8 @@ public interface AccountMapper {
 
 	int deleteAccount(Account a);
 
+	int idPwNicknameCheck(Map<String, String> users);
+
 
 
 

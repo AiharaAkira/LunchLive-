@@ -25,20 +25,17 @@ public class AccountDAO {
 
 		Account dbAccount = ss.getMapper(AccountMapper.class).getAccountByID(account);
 
-		
-			if (dbAccount != null) {
-				if (account.getU_pw().equals(dbAccount.getU_pw())) {
-					request.getSession().setAttribute("loginAccount", dbAccount);
-					request.getSession().setMaxInactiveInterval(60 * 10);
-				} else {
-					System.out.println("비밀번호다름_로그인실패!");
-				}
+		if (dbAccount != null) {
+			if (account.getU_pw().equals(dbAccount.getU_pw())) {
+				request.getSession().setAttribute("loginAccount", dbAccount);
+				request.getSession().setMaxInactiveInterval(60 * 10);
 			} else {
-				System.out.println("미가입 id_로그인실패");
+				System.out.println("비밀번호다름_로그인실패!");
 			}
+		} else {
+			System.out.println("미가입 id_로그인실패");
 		}
-
-	
+	}
 
 	public boolean loginCheck(HttpServletRequest request) {
 		Account account = (Account) request.getSession().getAttribute("loginAccount");
@@ -127,39 +124,47 @@ public class AccountDAO {
 	}
 
 	// idpw찾기, 로그인
-	public int userIdPwCheck(HttpServletRequest request,  Account a)  {
+	public int userIdPwCheck(HttpServletRequest request, Account a) {
 
-		Map<String, String> users = new HashMap<>();
+		Map<String, String> users = new HashMap<String, String>();
 
-			users.put("u_id", request.getParameter("u_id"));
-			users.put("u_pw", request.getParameter("u_pw"));
-			am = template.getMapper(AccountMapper.class);
-		
+		users.put("u_id", request.getParameter("u_id"));
+		users.put("u_pw", request.getParameter("u_pw"));
+		am = template.getMapper(AccountMapper.class);
+
 		return am.checkOverIdPw(users);
 	}
-
-
 
 	public void deleteAccount(HttpServletRequest request, Account a) {
 
 		String u_id = request.getParameter("u_id");
 		String u_pw = request.getParameter("u_pw");
 		String u_nickname = request.getParameter("u_nickname");
-		
+
 		a.setU_id(u_id);
 		a.setU_pw(u_pw);
 		a.setU_nickname(u_nickname);
-		
-		if(ss.getMapper(AccountMapper.class).deleteAccount(a)==1) {
+
+		if (ss.getMapper(AccountMapper.class).deleteAccount(a) == 1) {
 			System.out.println("회원삭제 성공!");
-		}else {
+		} else {
 			System.out.println("회원삭제 실패!");
-			
+
 		}
+
+	}
+
+	public int idPwNicknameCheck(HttpServletRequest request, Account a) {
+		Map<String, String> users = new HashMap<String, String>();
 		
-		
-		
-		
+		users.put("u_id", request.getParameter("u_id"));
+		users.put("u_pw", request.getParameter("u_pw"));
+		users.put("u_nickname", request.getParameter("u_nickname"));
+		users.put("u_pwCheck", request.getParameter("u_pwCheck"));
+		am = template.getMapper(AccountMapper.class);
+
+		return am.idPwNicknameCheck(users);
+
 	}
 
 }

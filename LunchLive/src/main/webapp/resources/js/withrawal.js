@@ -4,8 +4,6 @@ let u_pw = document.getElementById('u_pw');
 let u_pwCheck = document.getElementById('u_pwCheck');
 let u_nickname = document.getElementById('u_nickname');
 
-
-
 function call() {
 	
 	//아이디
@@ -39,9 +37,13 @@ function call() {
 		return false;
 	}
 	
+	
+	alert('회원탈퇴 되었습니다. 감사합니다!');
 	return true;
 	
 }
+
+
 
 $(function() {
 	//중복 id pw확인
@@ -51,7 +53,7 @@ $(function() {
 		var u_pwCheck = $("#u_pwCheck").val();
 		var u_nickname = $("#u_nickname").val();
 		$.ajax({
-			url : 'http://localhost/lunchlive/account.idPwCheck?u_id=' + u_id+'&u_pw='+u_pw+'&u_pwCheck='+u_pwCheck+'&u_nickname='+u_nickname,
+			url : 'http://localhost/lunchlive/account.idPwNicknameCheck?u_id=' + u_id+'&u_pw='+u_pw+'&u_pwCheck='+u_pwCheck+'&u_nickname='+u_nickname,
 			type : 'post',
 			success : function(data) {
 				console.log("1 = 중복o / 0 = 중복x : " + data);
@@ -59,8 +61,7 @@ $(function() {
 					alert("존재하지 않는 회원 입니다.");
 					location.href='http://localhost/lunchlive/withdrawal.go';
 				}else{
-					confirm("회원탈퇴 하시겠습니까?\n(회원관련 모든 정보는 삭제됩니다.)");
-					alert('회원탈퇴 되었습니다.');
+					
 				}
 			},
 			error : function() {
@@ -69,3 +70,5 @@ $(function() {
 		});
 	});
 });
+
+

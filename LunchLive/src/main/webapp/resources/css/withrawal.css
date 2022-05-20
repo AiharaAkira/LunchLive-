@@ -5,7 +5,10 @@ body {
 	text-align: center;
 	
 }
-
+#logo {
+	text-align: center;
+	margint: 0 auto;
+}
 #logo img{
 	width:15%;
 }

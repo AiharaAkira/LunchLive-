@@ -11,7 +11,7 @@
 <script src="resources/js/signUp.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="logo"onclick="location.href='http://localhost/lunchlive/'">로고</div>
+	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.png"></div>
 	<form action="signUp.do" name="form" id="formSignUp" method="post" onsubmit="return call();">
 	<div class="sign_input_wrap">
 		<h3 class="sign_title">아이디</h3>
