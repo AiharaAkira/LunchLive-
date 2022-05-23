@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.globalin.lunchlive.Mapper"></mapper>
+<mapper namespace="com.globalin.lunchlive.Mapper">
+
+	<select id="loginId" parameterType="Map" resultType="String">
+	select * from users where u_id = #{u_id} 
+	</select>
+	
+	<select id="loginPw" parameterType="Map" resultType="String">
+	select * from users where u_pw = #{u_pw} 
+	</select>
+	
+	<select id="account" parameterType="Map" resultType="com.globalin.lunchlive.account.Account">
+	select * from users where u_id = #{u_id} and u_pw = #{u_pw} 
+	</select>
+	
+	
+</mapper>
