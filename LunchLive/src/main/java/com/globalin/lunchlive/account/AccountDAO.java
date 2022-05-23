@@ -1,6 +1,7 @@
 package com.globalin.lunchlive.account;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,15 +24,18 @@ public class AccountDAO {
 	private AccountMapper am;
 
 	public void login(HttpServletRequest request, Account account, HttpServletResponse response) throws IOException {
-
+		PrintWriter out = response.getWriter();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Account dbAccount = ss.getMapper(AccountMapper.class).getAccountByID(account);
-
+		
 		if (dbAccount != null) {
-			if (account.getU_pw().equals(dbAccount.getU_pw())) {
+			if (encoder.matches(request.getParameter("u_pw"), dbAccount.getU_pw())) {
 				request.getSession().setAttribute("loginAccount", dbAccount);
 				request.getSession().setMaxInactiveInterval(60 * 10);
+				out.flush();
 			} else {
 				System.out.println("비밀번호다름_로그인실패!");
+				out.flush();
 			}
 		} else {
 			System.out.println("미가입 id_로그인실패");
@@ -57,8 +62,10 @@ public class AccountDAO {
 
 	public void singUp(Account account, HttpServletRequest request) {
 
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
 		String id = request.getParameter("u_id");
-		String pw = request.getParameter("u_pw");
+		String pw = encoder.encode(request.getParameter("u_pw"));
 		String nickname = request.getParameter("u_nickname");
 
 		account.setU_id(id);
@@ -156,7 +163,7 @@ public class AccountDAO {
 
 	public int idPwNicknameCheck(HttpServletRequest request, Account a) {
 		Map<String, String> users = new HashMap<String, String>();
-		
+
 		users.put("u_id", request.getParameter("u_id"));
 		users.put("u_pw", request.getParameter("u_pw"));
 		users.put("u_nickname", request.getParameter("u_nickname"));
