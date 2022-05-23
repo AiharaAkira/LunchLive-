@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body {
+	text-align: center;
+	background: #f5f6f7;
+}
+
+#logo {
+	text-align: center;
+	margint: 0 auto;
+}
+#logo img{
+	width:15%;
+}
+
+.article_title {
+	padding-bottom: 8px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+}
+
+#terms_div_first {
+	
+}
+
+.terms_div {
+	margin: 0 auto;
+	overflow: auto;
+	width: 30%;
+	height: 88px;
+	margin-top: 8px;
+	padding: 12px;
+	border: 1px solid #dadada;
+	background: #fff;
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 16px;
+	color: #666;
+}
+
+.terms_btn_default {
+	border: 1px solid #5b5b5b;
+	font-weight: 400;
+	color: #fff;
+	background-color: #8e8e8e;
+	padding: 15px 0 15px;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	width:140px;
+	margin:10px;5px;
+}
+
+#terms_btn_accept{
+	border: 1px solid #ce7e00;
+	background-color: orange;
+	}
