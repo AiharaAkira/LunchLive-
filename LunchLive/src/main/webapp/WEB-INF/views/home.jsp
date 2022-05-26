@@ -5,22 +5,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>포트폴리오</title>
+	<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
+	<title>LunchLive!</title>
 	
 	<link rel="stylesheet" href="resources/css/index.css">
     <link rel="stylesheet" href="resources/css/reset.css">
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
 
     <script src="resources/js/jquery-3.6.0.min.js"></script>
     <script src="resources/js/scroll.js"></script>
     <script src="resources/js/map_cons.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="resources/js/kakaomap.js"></script>
+    
 </head>
 <body>
 	<div id="wrap">
         <header class="header">
             <label onclick="fnMove('1')">
-              <img src="resources/img/big_logo.jpg" style="width: 100px;">
-              logo
+              <img src="resources/img/lunchlive_logo.png" style="width: 70px;">
             </label>
             <div class="right-items">
                 <button class="header_btn" onclick="fnMove('1')" >Main</button>
@@ -28,19 +33,26 @@
                 <button class="header_btn" onclick="fnMove('3')" >Game</button>
                 <button class="header_btn" onclick="fnMove('4')" >Comunity</button>
                 <button class="header_btn" onclick="fnMove('5')" >FAQ</button>
+                <button id="login_btn" class="header_btn" onclick="" >Login</button>
             </div>
         </header>
         <!-- main 페이지 -->
         <div id="div1" class="contents">
-            <div class="back"></div>
+            <div class="back">
+            	<p>LunchLive!</p>
+            </div>
             <img src="resources/img/sky.jpg">
         </div>
 
         <!-- Map, MapRoadView 페이지 -->
         <div id="div2"  class="contents">
             <div class="map_wrap">
-                <div id="map1">1</div>
-                <div id="map2">2</div>
+                <div id="map1">
+                	<div id="map" style="width: 100%; height: 100%;"></div>
+                </div>
+                <div id="map2">
+                	<div id="roadview" style="width: 100%; height: 100%"></div>
+                </div>
             </div>
             <div>
                 <button onclick="halfSize()" >RoadView 보기</button>
@@ -101,4 +113,23 @@
         <div id="div5"  class="contents">FAQ</div>
     </div>
 </body>
+<script>
+function halfSize(){
+    map1.style.width="50%";
+    map1.style.height="100%";
+    map2.style.width="50%";
+    map2.style.height="100%";
+    map1.style.transition=".5s";
+    map2.style.transition=".5s";
+}
+function defaultSize(){
+    map1.style.width="100%";
+    map1.style.height="100%";
+    map2.style.width="0";
+    map2.style.height="0";
+    div2.style.transition=".5s";
+    map1.style.transition=".5s";
+    map2.style.transition=".5s";
+}
+</script>
 </html>

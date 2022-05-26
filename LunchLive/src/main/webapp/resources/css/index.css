@@ -55,24 +55,24 @@ html, body {
 }
 
 #wrap .header.active {
-    background-color: #112B3C;
+    background-color: #FF8361;
     transition:.5s;
 }
 
 #wrap .header.active .right-items .header_btn{
-    border: 2px solid #EC994B;
-    color: #EC994B;
+    border: none;
+    color: #0A4F6C;
 }
 
 #wrap .header .right-items .header_btn{
-    margin-right: 20px;
+    margin-right: 10px;
 
-    border: 2px solid white;
+    border: none;
     color: white;
 
     appearance: none;
     background-color: transparent;
-    border-radius: 0.6em;
+    border-radius: 2.0em;
     cursor: pointer;
     font-size: 15px;
     font-weight: 400;
@@ -85,9 +85,16 @@ html, body {
     
 }
 
+#wrap .header .right-items #login_btn{
+    margin-right: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 1.0em;
+}
+
 #wrap .header .right-items .header_btn:hover {
-    box-shadow: 0 0 40px 40px #EC994B inset;
-    color: #112B3C;
+    box-shadow: 0 0 40px 40px #0A4F6C inset;
+    color: #FF8361;
 }
 
 /* header end*/
@@ -103,7 +110,7 @@ html, body {
     align-items : center;
     justify-content: center;
     -ms-overflow-style: none;
-    background-color: #EC994B;
+    background-color: #FFF;
 }
 
 #wrap .contents img{
@@ -118,6 +125,13 @@ html, body {
     background-color: #000;
     opacity: 0.3;
     z-index: 5;
+    text-align: center;
+	line-height: 900px;
+}
+
+#wrap .contents .back p {
+    color: #FFF;
+    font-weight: bold;
 }
 
 /* Map, MapRoadView Contents */

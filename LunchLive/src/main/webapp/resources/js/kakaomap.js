@@ -1,27 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
-<title>LunchLive!</title>
- <style>
-.customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
-.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
-.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;font-weight:bold;overflow:hidden;background: #d95050;background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
-.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
-.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-</style>
-<script type="text/javascript" src="resources/js/jQuery.js"></script>
-<!--
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=60d3d5b568586bcc670fec01a1366483"></script>
-	-->
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
-<script type="text/javascript">
-	$(function() {
+$(function() {
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = { //지도를 생성할 때 필요한 기본 옵션
 			center : new kakao.maps.LatLng(37.556567, 126.943366), //지도의 중심좌표.
@@ -42,6 +19,13 @@
 			roadview.setPanoId(panoId, position); //panoId와 중심좌표를 통해 로드뷰 실행
 		});
 
+		function setZoomable(zoomable) {
+		    // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+		    map.setZoomable(zoomable);    
+		}
+		
+		setZoomable(false);
+		
 		//https://dapi.kakao.com/v2/local/search/keyword.json?
 
 		$("#search").keyup(function(e) {
@@ -125,20 +109,4 @@
 						});
 
 	});
-</script>
-</head>
-<body>
-	<div>
-		<div onclick="location.href='http://localhost/lunchlive/'">logo</div>
-		<div>
-			<input id="search" placeholder="검색!!">
-			<hr>
-			<div id="map" style="width: 500px; height: 400px;"></div>
-			<div id="roadview" style="width: 100%; height: 300px"></div>
-		</div>
-		<div>게임</div>
-		<div><jsp:include page="${login}"></jsp:include></div>
-	</div>
-	<button onclick="location.href='http://localhost/lunchlive/withdrawal.go'">회원탈퇴</button>
-</body>
-</html>
+
