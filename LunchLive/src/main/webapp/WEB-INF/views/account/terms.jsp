@@ -7,6 +7,10 @@
 <link rel="shortcut icon" href="resources/img/web_icon_ll.png">
 <title>LunchLive!</title>
 <link rel="stylesheet" href="resources/css/terms.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+
 <script src="resources/js/validCheck.js" type="text/javascript"></script>
 </head>
 <body>

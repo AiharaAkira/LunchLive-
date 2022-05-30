@@ -25,6 +25,9 @@ public interface AccountMapper {
 	int idPwNicknameCheck(Map<String, String> users);
 
 
+	String getPassword(Account dbAccount);
+
+
 
 
 }

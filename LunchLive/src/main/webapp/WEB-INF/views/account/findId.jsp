@@ -9,6 +9,9 @@
 <script src="resources/js/jQuery.js" type="text/javascript"></script>
 <script src="resources/js/validCheck.js" type="text/javascript"></script>
 <link rel="stylesheet" href="resources/css/findId.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+	font-family: 'Gothic A1', sans-serif;
+}
+
 #form{
 	margin:0 auto;
 	width:300px;
@@ -9,7 +13,11 @@
 	border-radius: 5px;
 	margin-top: 50px;
 	text-align:center;
+	padding-right: 2%;
+	padding-left: 2%; 
 }
+
+
 
 .fp_txt{
 	    margin-top: 50px;

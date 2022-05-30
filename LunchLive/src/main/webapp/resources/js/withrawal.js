@@ -1,7 +1,39 @@
+let cnt = 0;
+
+$(function() {
+	//중복 id pw확인
+	$("#withdrawal_btn").click(function() {
+		var u_id = $("#u_id").val();
+		var u_nickname = $("#u_nickname").val();
+		$.ajax({
+			url : 'http://localhost/lunchlive/account.idPwNicknameCheck?u_id=' + u_id + '&u_nickname=' + u_nickname,
+			type : 'post',
+			success : function(data) {
+				cnt = 0;
+				console.log("1 = 중복o / 0 = 중복x : " + data);
+				if (data == 0 && u_id && u_nickname ) {
+					
+					cnt = 0;
+					alert("존재하지 않는 회원 입니다.");
+					location.href='http://localhost/lunchlive/withdrawal.go';
+				}else{
+					
+					cnt = 1;
+					
+					
+				}
+			},
+			error : function() {
+				cnt = 0;
+				console.log("실패");
+			}
+		});
+	});
+});
+
+
 
 let u_id = document.getElementById('u_id');
-let u_pw = document.getElementById('u_pw');
-let u_pwCheck = document.getElementById('u_pwCheck');
 let u_nickname = document.getElementById('u_nickname');
 
 function call() {
@@ -14,20 +46,7 @@ function call() {
 		return false;
 	}
 	
-	//비밀번호: 빈칸x 영어+숫자+특수문자 + 공백x 8자이상
-	if (isEmpty(u_pw) ) {
-		alert("비밀번호를 확인해 주세요");
-		u_pw.value = "";
-		u_pw.focus();
-		return false;
-	}
-	//비밀번호확인
-	if (equalCheck(u_pw, u_pwCheck)||isEmpty(u_pwCheck)) {
-		alert("상위의 비밀번호와 동일한 값을 입력해 주세요.");
-		u_pwCheck.value = "";
-		u_pwCheck.focus();
-		return false;
-	}
+	
 	
 	//닉네임: 빈칸x 한글+영어+숫자 공백x 10자~20자
 	if (isEmpty(u_nickname)) {
@@ -37,38 +56,22 @@ function call() {
 		return false;
 	}
 	
+	if(cnt == 0){
+		return false;
+	}
 	
-	alert('회원탈퇴 되었습니다. 감사합니다!');
-	return true;
+	let result = confirm('회원탈퇴 하시겠습니까? \n 그동안의 정보는 모두 삭제됩니다!');
+	
+	if(result == false){
+		cnt = 0;
+		return result;
+	}else{
+		
+		return result;
+	}
 	
 }
 
 
-
-$(function() {
-	//중복 id pw확인
-	$("#withdrawal_btn").click(function() {
-		var u_id = $("#u_id").val();
-		var u_pw = $("#u_pw").val();
-		var u_pwCheck = $("#u_pwCheck").val();
-		var u_nickname = $("#u_nickname").val();
-		$.ajax({
-			url : 'http://localhost/lunchlive/account.idPwNicknameCheck?u_id=' + u_id+'&u_pw='+u_pw+'&u_pwCheck='+u_pwCheck+'&u_nickname='+u_nickname,
-			type : 'post',
-			success : function(data) {
-				console.log("1 = 중복o / 0 = 중복x : " + data);
-				if (data == 0 && u_id && u_pw && u_nickname && u_pwCheck) {
-					alert("존재하지 않는 회원 입니다.");
-					location.href='http://localhost/lunchlive/withdrawal.go';
-				}else{
-					
-				}
-			},
-			error : function() {
-				console.log("실패");
-			}
-		});
-	});
-});
 
 

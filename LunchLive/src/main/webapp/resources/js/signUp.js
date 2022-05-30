@@ -50,6 +50,16 @@ $(function() {
 		});
 	});
 	
+	$('#u_id').keyup(function() {
+		cntId = 2;
+		
+	});
+	
+	$('#u_nickname').keyup(function() {
+		cntNick = 2;
+		
+	});
+	
 	
 });
 

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+	font-family: 'Gothic A1', sans-serif;
+}
+
 #fdi_box{
 	text-align:center;
 	margin:10% auto;
