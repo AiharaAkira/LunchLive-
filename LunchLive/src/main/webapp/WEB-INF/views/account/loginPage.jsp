@@ -8,7 +8,9 @@
 <title>LunchLive!</title>
 <script src="resources/js/jQuery.js" type="text/javascript"></script>
 <script src="resources/js/validCheck.js" type="text/javascript"></script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="resources/css/loginPage.css"></link>
 </head>
 <body>
@@ -39,6 +41,6 @@
 	</div>
 	<br>
 	<div>footer</div>
-	<script src="resources/js/loginPage.js" type="text/javascript"></script>
+	<script src="resources/js/loginPage.js" type="text/javascript"></script> 
 </body>
 </html>

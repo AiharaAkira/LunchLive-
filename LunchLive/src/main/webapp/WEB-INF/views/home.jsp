@@ -137,6 +137,8 @@
         
         <!-- FAQ 페이지 -->
         <div id="div5"  class="contents">FAQ</div>
+    	<div><jsp:include page="${login}"></jsp:include></div>
+		<button onclick="location.href='http://localhost/lunchlive/withdrawal.go'">회원탈퇴</button>
     </div>
 </body>
 <script>
