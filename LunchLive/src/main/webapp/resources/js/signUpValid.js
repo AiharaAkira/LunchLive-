@@ -139,13 +139,13 @@ function CheckID(uid) {
 
 //비밀번호체크
 function CheckPassword(upw) {
-	if (!/^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,20}$/.test(upw)) {
+	/*if (!/^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,20}$/.test(upw)) {
 		alert("비밀번호는 숫자와 영문자 조합으로 8~20자리를 사용해야 합니다.");
 		return true;
-	}
+	}*/
 	var chk_num = upw.search(/[0-9]/g);
 	var chk_eng = upw.search(/[a-z]/ig);
-	var chk_special = upw.search(/[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g);
+	var chk_special = upw.search(/(?=.*[a-zA-ZS])(?=.*?[#?!@$%^&*-]).{8,20}/);
 	if (chk_num < 0 || chk_eng < 0 || chk_special < 0) {
 		alert("비밀번호는 숫자와 특수문자+영문자를 혼용하여야 합니다.");
 		return true;
@@ -214,7 +214,8 @@ function call() {
 		alert("닉네임 중복체크를 해주세요");
 		return false;
 	}
-	confirm("회원가입 하시겠습니까?");
-	alert("회원가입 되셨습니다! 환영합니다:)");
-	return true;
+	
+	
+	let result = confirm("회원가입 하시겠습니까?");
+	return result;
 }

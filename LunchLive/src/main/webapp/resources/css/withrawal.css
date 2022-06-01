@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
 body {
+	
 	background-color: #fff;
 	text-align: center;
+	font-family: 'Gothic A1', sans-serif;
 	
 }
 #logo {
@@ -23,9 +25,7 @@ body {
 	bottom: 0;
 	padding: 6px 0 6px;
 	border-top: 1px solid #e5e5e5;
-	background: #333
-		url(https://static.nid.naver.com/images/web/user/bg_footer.png)
-		repeat-x 0 0;
+	background: #FFD24C;
 	text-align: center;
 	zoom: 1;
 	overflow: hidden;
@@ -47,6 +47,7 @@ body {
 	font-size: 14px;
     line-height: 17px;
     text-decoration: none;
+    margin-top: 5%;
 	color: #888;
 }
 
@@ -56,9 +57,10 @@ body {
 }
 
 #login_box {
+	padding: 1%;
 	margin:0 auto;
 	width:300px;
-	height:350px;
+	height:300px;
 	border: 1px solid #c6c6c6;
 	box-shadow: 0 5px 8px 0 rgb(68 68 68 / 4%);
 	border-radius: 5px;
