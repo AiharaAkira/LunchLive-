@@ -1,6 +1,7 @@
 let cnt = 0;
 
 $(function() {
+	
 	//중복 id pw확인
 	$("#withdrawal_btn").click(function() {
 		var u_id = $("#u_id").val();
