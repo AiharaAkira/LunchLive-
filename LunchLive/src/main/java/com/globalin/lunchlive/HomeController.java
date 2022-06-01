@@ -20,7 +20,7 @@ public class HomeController {
 		
 		ado.loginCheck(request);
 		
-		return "home";
+		return "index";
 	}
 	
 	

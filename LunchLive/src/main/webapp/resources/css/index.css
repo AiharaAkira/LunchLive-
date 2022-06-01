@@ -55,7 +55,7 @@ html, body {
 }
 
 #wrap .header.active {
-    background-color: #FF8361;
+    background-color: #FFD24C;
     transition:.5s;
 }
 
@@ -94,7 +94,7 @@ html, body {
 
 #wrap .header .right-items .header_btn:hover {
     box-shadow: 0 0 40px 40px #0A4F6C inset;
-    color: #FF8361;
+    color: #FFD24C;
 }
 
 /* header end*/
@@ -141,11 +141,22 @@ html, body {
     flex-direction: column;
 }
 
+#wrap #div2 #search{
+	margin: 5px 0 2px;
+	width: 90%;
+	padding: 10px;
+	background :white;
+	color: black;
+	font-size: 17px;
+	border: 1px solid grey;
+	/* border-left: none; */
+	cursor: pointer;
+}
+
 #wrap .contents .map_wrap {
     display: flex;
     width: 100%;
     height: 100%;
-    margin-top: 70px;
     align-items: center;
     justify-content: center;
 }
@@ -154,6 +165,14 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: azure;
+}
+
+#wrap .contents #map {
+	font-size: 15px;
+}
+
+#wrap .contents #map a {
+	text-decoration-line: none;
 }
 
 #wrap .contents #map2 {
@@ -180,6 +199,8 @@ html, body {
     display: block;
     margin: 0 auto;
     position: relative;
+    align-items : center;
+    justify-content: center;
 }
 
 .slides * {
@@ -193,7 +214,10 @@ html, body {
 
 .slides input { display: none; }
 
-.slide-container { display: block; }
+.slide-container { 
+	display: block;
+	text-align: center;
+}
 
 .slide {
     top: 0;
@@ -215,7 +239,7 @@ html, body {
 }
 
 .nav label {
-    width: 200px;
+    width: 100px;
     height: 100%;
     display: none;
     position: absolute;

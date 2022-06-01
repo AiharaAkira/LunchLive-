@@ -3,32 +3,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
 	<title>LunchLive!</title>
 	
 	<link rel="stylesheet" href="resources/css/index.css">
     <link rel="stylesheet" href="resources/css/reset.css">
     
+    <link rel="stylesheet" href="resources/css/card.css">
+    
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
 
-    <script src="resources/js/jquery-3.6.0.min.js"></script>
-    <script src="resources/js/scroll.js"></script>
-    <script src="resources/js/map_cons.js"></script>
+	<script src="resources/js/scroll.js"></script>
+    <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
+    <script src="/js/map_cons.js"></script>
     <script src="resources/js/kakaomap.js"></script>
+    <script src="resources/js/card.js"></script>
+    
+    <!--<script src="resources/js/sadariGame.js"></script>  -->
     
 </head>
 <body>
 	<div id="wrap">
         <header class="header">
             <label onclick="fnMove('1')">
-              <img src="resources/img/lunchlive_logo.png" style="width: 70px;">
+              <img src="resources/img/ll_logo.png" style="width: 70px;">
             </label>
             <div class="right-items">
-                <button class="header_btn" onclick="fnMove('1')" >Main</button>
+                <button class="header_btn" onclick="fnMove('1')" >LunchLive</button>
                 <button class="header_btn" onclick="fnMove('2')" >Map</button>
                 <button class="header_btn" onclick="fnMove('3')" >Game</button>
                 <button class="header_btn" onclick="fnMove('4')" >Comunity</button>
@@ -46,12 +49,13 @@
 
         <!-- Map, MapRoadView 페이지 -->
         <div id="div2"  class="contents">
+        	<input id="search" placeholder="검색!!" style="margin-top: 70px;">
             <div class="map_wrap">
                 <div id="map1">
                 	<div id="map" style="width: 100%; height: 100%;"></div>
                 </div>
                 <div id="map2">
-                	<div id="roadview" style="width: 100%; height: 100%"></div>
+                	<div id="roadview" style="width: 100%; height: 100%"></div>	
                 </div>
             </div>
             <div>
@@ -60,16 +64,38 @@
             </div>
         </div>
 
-        
-
         <!-- 게임 페이지 -->
         <div id="div3"  class="contents">
             <ul class="slides">
                 <input type="radio" name="radio-btn" id="img-1" checked />
                 <li class="slide-container">
                 <div class="slide">
-                  <img src="resources/img/slide01.jpg" />
-                    </div>
+                	<div id="g_form" style="margin-top: 50px">
+				    	<button  id="kfood"class="card" name="pw" value="한식">
+				    		<img alt="" src="resources/img/cardImg.png">
+				    	</button>
+				
+						<button id="cfood" class="card" name="pw" value="중식">
+							<img alt="" src="resources/img/cardImg.png" >
+						</button>
+				
+						<button id="jfood"  class="card" name="pw" value="일식">
+							<img alt="" src="resources/img/cardImg.png" >
+						</button>
+				
+						<button id="efood"  class="card" name="pw" value="양식">
+							<img alt="" src="resources/img/cardImg.png">
+						</button>
+					
+						<button id="vfood"  class="card" name="pw" value="베트남">
+							<img alt="" src="resources/img/cardImg.png" >
+						</button>
+					
+						<button id="mfood"  class="card" name="pw" value="분식">
+							<img alt="" src="resources/img/cardImg.png" >
+						</button>
+					</div>
+                </div>
                 <div class="nav">
                   <label for="img-3" class="prev">&#x2039;</label>
                   <label for="img-2" class="next">&#x203a;</label>
@@ -79,7 +105,7 @@
                 <input type="radio" name="radio-btn" id="img-2" />
                 <li class="slide-container">
                     <div class="slide">
-                      <img src="resources/img/slide02.jpg" />
+                    	<img src="resources/img/slide02.jpg" />
                     </div>
                 <div class="nav">
                   <label for="img-1" class="prev">&#x2039;</label>
@@ -132,4 +158,5 @@ function defaultSize(){
     map2.style.transition=".5s";
 }
 </script>
+
 </html>
