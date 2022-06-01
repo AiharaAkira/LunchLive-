@@ -18,19 +18,18 @@
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=60d3d5b568586bcc670fec01a1366483"></script>
 <script type="text/javascript">
 	$(function() {
+		
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = { //지도를 생성할 때 필요한 기본 옵션
 			center : new kakao.maps.LatLng(37.556567, 126.943366), //지도의 중심좌표.
 			level : 3
 		//지도의 레벨(확대, 축소 정도)
 		};
-
+		
 		var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-
 		var roadviewContainer = document.getElementById('roadview'); //로드뷰를 표시할 div
 		var roadview = new kakao.maps.Roadview(roadviewContainer); //로드뷰 객체
 		var roadviewClient = new kakao.maps.RoadviewClient(); //좌표로부터 로드뷰 파노ID를 가져올 로드뷰 helper객체
-
 		var position = new kakao.maps.LatLng(37.556567, 126.943366);
 
 		// 특정 위치의 좌표와 가까운 로드뷰의 panoId를 추출하여 로드뷰를 띄운다.
@@ -134,6 +133,7 @@
 		<div>게임</div>
 		<div><jsp:include page="${login}"></jsp:include></div>
 	</div>
-	<button onclick="location.href='http://localhost/lunchlive/withdrawal.go'">회원탈퇴</button>
+	<jsp:include page="${withdrawalBtn}"></jsp:include>
+	
 </body>
 </html>

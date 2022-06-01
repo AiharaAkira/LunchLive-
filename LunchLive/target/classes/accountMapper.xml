@@ -2,6 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.globalin.lunchlive.account.AccountMapper">
 
+	<select id="getPassword"  resultType="String">
+	select u_pw from users where u_id = #{u_id}
+	</select>
+
 	<select id="findIdDo" parameterType="String" resultType="String">
 	select u_id from users where u_nickname = #{u_nickname}
 	</select>
@@ -11,18 +15,18 @@
 	</select>
 	
 	<select id="checkOverIdPw" parameterType="Map" resultType="Integer">
-	select count(*) from users where u_id = #{u_id} and u_pw = #{u_pw}
+	select count(*) from users where u_id = #{u_id} 
 	</select>
 	
 	<select id="idPwNicknameCheck" parameterType="Map" resultType="Integer">
-	select count(*) from users where u_id = #{u_id} and u_pw = #{u_pw} and u_pw = #{u_pwCheck} and u_nickname = #{u_nickname}
+	select count(*) from users where u_id = #{u_id} and u_nickname = #{u_nickname}
 	</select>
 	
 	<select id="checkOverNickname" parameterType="String" resultType="Integer">
 	select count(*) from users where u_nickname = #{u_nickname}
 	</select>
 
-	<select id="getAccountByID" resultType="Account">
+	<select id="getAccountByID"  resultType="Account">
 		select * from users
 		where
 		u_id = #{u_id}
@@ -39,6 +43,6 @@
 	</update>
 	
 	<delete id="deleteAccount" parameterType="com.globalin.lunchlive.account.Account">
-	delete from users where u_id = #{u_id} and u_pw = #{u_pw} and u_nickname = #{u_nickname}
+	delete from users where u_id = #{u_id} and u_nickname = #{u_nickname}
 	</delete>
 </mapper>

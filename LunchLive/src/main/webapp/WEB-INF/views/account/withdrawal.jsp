@@ -8,6 +8,10 @@
 <script src="resources/js/jQuery.js" type="text/javascript"></script>
 <script src="resources/js/validCheck.js" type="text/javascript"></script>
 <link rel="stylesheet" href="resources/css/withrawal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+
 <title>LunchLive!</title>
 </head>
 <body>
@@ -17,13 +21,7 @@
 
 		<div id="withrawal_id_div" class="login_menu">아이디</div>
 		<input class="input_login" id="u_id" name="u_id">
-
-		<div class="login_menu">비밀번호</div>
-		<input class="input_login" id="u_pw" name="u_pw">
 		
-		<div class="login_menu">비밀번호 확인</div>
-		<input class="input_login" id="u_pwCheck" name="u_pwCheck">
-
 		<div class="login_menu">닉네임</div>
 		<input class="input_login" id="u_nickname" name="u_nickname">
 

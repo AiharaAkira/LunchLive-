@@ -16,5 +16,5 @@ ALTER TABLE users modify (u_pw varchar2(300 char));
 
 //유저 조회
 select * from USERS;
-
+select count(*) from users where u_id = 'alsdn46391234' and u_nickname ='asd11';
 
