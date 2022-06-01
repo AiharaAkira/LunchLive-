@@ -56,24 +56,24 @@ html, body {
 }
 
 #wrap .header.active {
-    background-color: #112B3C;
+    background-color: #FFD24C;
     transition:.5s;
 }
 
 #wrap .header.active .right-items .header_btn{
-    border: 2px solid #EC994B;
-    color: #EC994B;
+    border: none;
+    color: #0A4F6C;
 }
 
 #wrap .header .right-items .header_btn{
-    margin-right: 20px;
+    margin-right: 10px;
 
-    border: 2px solid white;
+    border: none;
     color: white;
 
     appearance: none;
     background-color: transparent;
-    border-radius: 0.6em;
+    border-radius: 2.0em;
     cursor: pointer;
     font-size: 15px;
     font-weight: 400;
@@ -86,9 +86,16 @@ html, body {
     
 }
 
+#wrap .header .right-items #login_btn{
+    margin-right: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 1.0em;
+}
+
 #wrap .header .right-items .header_btn:hover {
-    box-shadow: 0 0 40px 40px #EC994B inset;
-    color: #112B3C;
+    box-shadow: 0 0 40px 40px #0A4F6C inset;
+    color: #FFD24C;
 }
 
 /* header end*/
@@ -104,7 +111,7 @@ html, body {
     align-items : center;
     justify-content: center;
     -ms-overflow-style: none;
-    background-color: #EC994B;
+    background-color: #FFF;
 }
 
 #wrap .contents img{
@@ -119,6 +126,13 @@ html, body {
     background-color: #000;
     opacity: 0.3;
     z-index: 5;
+    text-align: center;
+	line-height: 900px;
+}
+
+#wrap .contents .back p {
+    color: #FFF;
+    font-weight: bold;
 }
 
 /* Map, MapRoadView Contents */
@@ -128,11 +142,22 @@ html, body {
     flex-direction: column;
 }
 
+#wrap #div2 #search{
+	margin: 5px 0 2px;
+	width: 90%;
+	padding: 10px;
+	background :white;
+	color: black;
+	font-size: 17px;
+	border: 1px solid grey;
+	/* border-left: none; */
+	cursor: pointer;
+}
+
 #wrap .contents .map_wrap {
     display: flex;
     width: 100%;
     height: 100%;
-    margin-top: 70px;
     align-items: center;
     justify-content: center;
 }
@@ -141,6 +166,14 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: azure;
+}
+
+#wrap .contents #map {
+	font-size: 15px;
+}
+
+#wrap .contents #map a {
+	text-decoration-line: none;
 }
 
 #wrap .contents #map2 {
@@ -167,6 +200,8 @@ html, body {
     display: block;
     margin: 0 auto;
     position: relative;
+    align-items : center;
+    justify-content: center;
 }
 
 .slides * {
@@ -180,7 +215,10 @@ html, body {
 
 .slides input { display: none; }
 
-.slide-container { display: block; }
+.slide-container { 
+	display: block;
+	text-align: center;
+}
 
 .slide {
     top: 0;
@@ -202,7 +240,7 @@ html, body {
 }
 
 .nav label {
-    width: 200px;
+    width: 100px;
     height: 100%;
     display: none;
     position: absolute;
