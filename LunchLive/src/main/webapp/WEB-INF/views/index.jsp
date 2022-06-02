@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
 	<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
 	<title>LunchLive!</title>
 	
@@ -13,7 +14,7 @@
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=60d3d5b568586bcc670fec01a1366483"></script>
 
 	<script src="resources/js/scroll.js"></script>
     <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
@@ -37,7 +38,7 @@
                 <button class="header_btn" onclick="fnMove('3')" >Game</button>
                 <button class="header_btn" onclick="fnMove('4')" >Comunity</button>
                 <button class="header_btn" onclick="fnMove('5')" >FAQ</button>
-                <button id="login_btn" class="header_btn" onclick="" >Login</button>
+                <jsp:include page="${login}"></jsp:include>
             </div>
         </header>
         <!-- main 페이지 -->

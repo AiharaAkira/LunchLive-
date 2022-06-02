@@ -5,7 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <link rel="shortcut icon" href="resources/img/web_icon_ll.png">
+
 <title>LunchLive!</title>
+
 <link rel="stylesheet" href="resources/css/signUp.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
