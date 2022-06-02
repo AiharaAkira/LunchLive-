@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="resources/css/reset.css">
     
     <link rel="stylesheet" href="resources/css/card.css">
+    <link rel="stylesheet" href="resources/css/loginBtn.css">
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript"
@@ -22,6 +23,7 @@
     <script src="resources/js/kakaomap.js"></script>
     <script src="resources/js/card.js"></script>
     <script src="resources/js/rullet.js"></script>
+    
     
     <!--<script src="resources/js/sadariGame.js"></script>  -->
     
