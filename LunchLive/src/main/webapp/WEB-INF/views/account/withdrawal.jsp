@@ -27,7 +27,7 @@
 
 		<br><button id="withdrawal_btn">회원탈퇴</button>
 	</form>
-	<div id="footer">footer</div>
+	<div id="footer"></div>
 	<script src="resources/js/withrawal.js" type="text/javascript"></script>
 </body>
 </html>

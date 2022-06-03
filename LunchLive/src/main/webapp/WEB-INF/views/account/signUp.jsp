@@ -30,12 +30,12 @@
 			<br>
 		</div>
 		<div class="sign_input_wrap">
-			<h3 class="sign_title">비밀번호</h3>
-			<input class="sign_input_default" id="u_pw" name="u_pw"><br>
+			<h3  class="sign_title">비밀번호</h3>
+			<input type="password" class="sign_input_default" id="u_pw" name="u_pw"><br>
 		</div>
 		<div class="sign_input_wrap">
-			<h3 class="sign_title">pw확인</h3>
-			<input id="u_pwCheck" class="sign_input_default"><br>
+			<h3  class="sign_title">pw확인</h3>
+			<input type="password" id="u_pwCheck" class="sign_input_default"><br>
 		</div>
 		<div class="sign_input_wrap">
 			<h3 class="sign_title">닉네임</h3>
@@ -48,7 +48,7 @@
 			<button id="sign_submit_btn">회원가입</button>
 		</div>
 	</form>
-	<div id="footer">footer</div>
+	<div id="footer"></div>
 	<script src="resources/js/signUp.js" type="text/javascript"></script>
 	<script src="resources/js/signUpValid.js" type="text/javascript"></script>
 

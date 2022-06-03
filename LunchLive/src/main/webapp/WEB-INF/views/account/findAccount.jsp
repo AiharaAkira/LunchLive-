@@ -23,6 +23,6 @@
 <div id="fa_idpwbox_warraper">
 	<jsp:include page="${findAccounts}"></jsp:include>
 </div>
-<div id="footer">footer</div>
+<div id="footer"></div>
 </body>
 </html>

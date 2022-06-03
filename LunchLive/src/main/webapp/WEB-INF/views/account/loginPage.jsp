@@ -25,7 +25,7 @@
 					name="u_id">
 			</div>
 			<div>
-				<input placeholder="비밀번호" class="input_login" id="input_login_pw" name="u_pw">
+				<input type="password" placeholder="비밀번호" class="input_login" id="input_login_pw" name="u_pw">
 			</div>
 			<button id="login_btn">로그인</button>
 		</form>
@@ -40,7 +40,7 @@
 		<a href="http://localhost/lunchlive/terms.go" class="login_menu">회원가입</a>
 	</div>
 	<br>
-	<div>footer</div>
+	<div id="footer"></div>
 	<script src="resources/js/loginPage.js" type="text/javascript"></script> 
 </body>
 </html>
