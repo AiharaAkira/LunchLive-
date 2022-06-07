@@ -175,7 +175,7 @@
                 <span class="faq_txt"> ✔탈퇴를 하시기 위해서는 보안상의 문제로 인하여,
                     반드시 로그인을 하셔야 회원탈퇴가 가능합니다. ※로그인 후의 이 자리에 있는 탈퇴버튼으로 탈퇴 하실 수 있습니다.
                     <c:if test="${sessionScope.loginAccount != null}">
-                    <button id="withdrawal_Btn" onclick="location.href='http://localhost/lunchlive/withdrawal.go'">회원탈퇴</button>
+                    <button id="withdrawal_Btn" onclick="location.href='http://alsdn3795.cafe24.com/withdrawal.go'">회원탈퇴</button>
                     </c:if>
                     
                     

@@ -7,18 +7,25 @@
     list-style: none;
     display: none;
     margin-bottom: 1%;
+    width: 100%;
 
 }
 
 .faq_question {
     list-style: none;
     margin-bottom: 1%;
+	width: 100%;
+}
+
+.faq_question:hover {
+	background-color: yellow;
 }
 
 .faq_txt{
 	
 	 font-family: 'Noto Sans KR', sans-serif;
-		font-size:50%;
+		font-size:20px;
+		font-weight: bold;
 	
 	
 }

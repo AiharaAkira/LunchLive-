@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="resources/css/loginPage.css"></link>
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.png"></div>
+	<div id="logo" onclick="location.href='http://alsdn3795.cafe24.com/'"><img src="resources/img/ll_logo.png"></div>
 
 	<div id="login_box">
 		<form id="form" name="form" action="login.get" method="post" onsubmit="return call();">
@@ -34,10 +34,10 @@
 
 
 	<div>
-		<a href="http://localhost/lunchlive/findPw.go" id="login_menu_find_id"
+		<a href="http://alsdn3795.cafe24.com/findPw.go" id="login_menu_find_id"
 			class="login_menu">비밀번호 찾기</a> 
-		<a href="http://localhost/lunchlive/findId.go" class="login_menu">아이디 찾기</a> 
-		<a href="http://localhost/lunchlive/terms.go" class="login_menu">회원가입</a>
+		<a href="http://alsdn3795.cafe24.com/findId.go" class="login_menu">아이디 찾기</a> 
+		<a href="http://alsdn3795.cafe24.com/terms.go" class="login_menu">회원가입</a>
 	</div>
 	<br>
 	<div id="footer"></div>
