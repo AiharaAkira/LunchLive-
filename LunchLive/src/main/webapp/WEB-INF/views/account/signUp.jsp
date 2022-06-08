@@ -17,7 +17,7 @@
 
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://alsdn3795.cafe24.com/lunchlive/'">
+	<div id="logo" onclick="location.href='http://alsdn3795.cafe24.com/'">
 		<img src="resources/img/ll_logo.png">
 	</div>
 	<form action="signUp.do" name="form" id="formSignUp" method="post"

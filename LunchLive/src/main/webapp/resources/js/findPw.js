@@ -48,14 +48,14 @@ $(function() {
 	$("#fp_submit_btn").click(function() {
 		var u_id = $("#u_id").val();
 		$.ajax({
-			url : 'http://localhost/lunchlive/account.idCheckOnFind?u_id=' + u_id,
+			url : 'http://alsdn3795.cafe24.com/account.idCheckOnFind?u_id=' + u_id,
 			type : 'post',
 			success : function(data) {
 				
 				if (data == 0 && u_id &&u_pw && u_pwCheck) {
 					cnt = 0;
 					alert("존재하지 않는 아이디 입니다.");
-					location.href='http://localhost/lunchlive/findPw.go';
+					location.href='http://alsdn3795.cafe24.com/findPw.go';
 				}else{
 					
 					cnt = 1;

@@ -67,6 +67,7 @@ public class AccountController {
 	@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
 	@ResponseBody
 	public int nicknameCheck(@RequestParam("u_nickname") String u_nickname) {
+		
 		return ado.userNicknameCheck(u_nickname);
 		
 	}
