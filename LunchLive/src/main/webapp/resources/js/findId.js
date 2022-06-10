@@ -20,13 +20,13 @@ $(function() {
 	$("#fp_submit_btn").click(function() {
 		var u_nickname = $("#u_nickname").val();
 		$.ajax({
-			url : 'http://localhost/lunchlive/account.nicknameCheckOnFind?u_nickname=' + u_nickname,
+			url : 'http://alsdn3795.cafe24.com/account.nicknameCheckOnFind?u_nickname=' + u_nickname,
 			type : 'post',
 			success : function(data) {
 				console.log("1 = 중복o / 0 = 중복x : " + data);
 				if (data == 0 && u_nickname) {
 					alert("존재하지 않는 닉네임 입니다.");
-					location.href='http://localhost/lunchlive/findId.go';
+					location.href='http://alsdn3795.cafe24.com/findId.go';
 				}else{
 					console.log("아이디찾기");
 					

@@ -10,14 +10,14 @@ $(function() {
 		var u_pw = $('#input_login_pw').val();
 		
 		$.ajax({
-			url : 'http://localhost/lunchlive/account.idPwCheck?u_id=' + u_id+'&u_pw='+u_pw,
+			url : 'http://alsdn3795.cafe24.com/account.idPwCheck?u_id=' + u_id+'&u_pw='+u_pw,
 			type : 'post',
 			success : function(data) {
 				
 				if (data == 0 && u_id && u_pw) {
 					cnt = 0;
 					alert("아이디 혹은 비밀번호가 잘못 되었습니다.");
-					location.href='http://localhost/lunchlive/login.do';
+					location.href='http://alsdn3795.cafe24.com/login.do';
 				}else{
 					cnt = 1;
 					

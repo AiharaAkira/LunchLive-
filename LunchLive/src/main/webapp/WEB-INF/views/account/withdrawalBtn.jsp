@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<button id="withdrwal_btn" onclick="location.href='http://localhost/lunchlive/withdrawal.go'">회원탈퇴</button>	
+<button id="withdrwal_btn" onclick="location.href='http://alsdn3795.cafe24.com/withdrawal.go'">회원탈퇴</button>	
 
 </body>
 </html>
