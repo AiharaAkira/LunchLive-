@@ -37,7 +37,7 @@
                 <button class="header_btn" onclick="fnMove('3')" >Game</button>
                 <button class="header_btn" onclick="fnMove('4')" >Comunity</button>
                 <button class="header_btn" onclick="fnMove('5')" >FAQ</button>
-                <button id="login_btn" class="header_btn" onclick="" >Login</button>
+                <button id="login_btn" class="header_btn" onclick="location.href='http://localhost:8080/lunchlive/login.do'" >Login</button>
             </div>
         </header>
         <!-- main 페이지 -->
