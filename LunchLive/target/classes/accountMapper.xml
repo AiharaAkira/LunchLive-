@@ -35,7 +35,7 @@
 	<insert id="join"
 		parameterType="com.globalin.lunchlive.account.Account">
 		insert into users values(#{u_id}, #{u_pw},
-		#{u_nickname}, 0, sysdate)
+		#{u_nickname}, 0, sysdate())
 	</insert>
 	
 	<update id="findPwDo" parameterType="com.globalin.lunchlive.account.Account">

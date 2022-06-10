@@ -12,19 +12,6 @@
 <title>LunchLive!</title>
 </head>
 <body>
-<button style="
-	cursor: pointer;
-   	width:100px;
-   	height:45px;
-    padding: 13px 0;
-    margin:11px;
-    background-color: orange;
-    border: 1px solid #ce7e00;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    font-size: 13px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;" onclick="location.href='http://localhost/lunchlive/login.do'">로그인</button>
+<button id="login_btn" class="header_btn" onclick="location.href='http://alsdn3795.cafe24.com/login.do'">login</button>
 </body>
 </html>

@@ -86,12 +86,12 @@ html, body {
     
 }
 
-#wrap .header .right-items #login_btn{
+/*#wrap .header .right-items #login_btn{
     margin-right: 20px;
     font-size: 12px;
     font-weight: bold;
     border-radius: 1.0em;
-}
+}*/
 
 #wrap .header .right-items .header_btn:hover {
     box-shadow: 0 0 40px 40px #0A4F6C inset;

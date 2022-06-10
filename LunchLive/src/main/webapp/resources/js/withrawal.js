@@ -7,7 +7,7 @@ $(function() {
 		var u_id = $("#u_id").val();
 		var u_nickname = $("#u_nickname").val();
 		$.ajax({
-			url : 'http://localhost/lunchlive/account.idPwNicknameCheck?u_id=' + u_id + '&u_nickname=' + u_nickname,
+			url : 'http://alsdn3795.cafe24.com/account.idPwNicknameCheck?u_id=' + u_id + '&u_nickname=' + u_nickname,
 			type : 'post',
 			success : function(data) {
 				cnt = 0;
@@ -16,7 +16,7 @@ $(function() {
 					
 					cnt = 0;
 					alert("존재하지 않는 회원 입니다.");
-					location.href='http://localhost/lunchlive/withdrawal.go';
+					location.href='http://alsdn3795.cafe24.com/lunchlive/withdrawal.go';
 				}else{
 					
 					cnt = 1;

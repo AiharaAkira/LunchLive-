@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+.faq_answer {
+
+    
+    list-style: none;
+    display: none;
+    margin-bottom: 1%;
+    width: 100%;
+
+}
+
+.faq_question {
+    list-style: none;
+    margin-bottom: 1%;
+	width: 100%;
+}
+
+.faq_question:hover {
+	background-color: yellow;
+}
+
+.faq_txt{
+	
+	 font-family: 'Noto Sans KR', sans-serif;
+		font-size:20px;
+		font-weight: bold;
+	
+	
+}
+
+#withdrawal_Btn{
+	background-color:orange;
+	color:white;
+	border-radius: 2px;
+    border: solid 1px rgba(0,0,0,.15);
+	cursor: pointer;
+	
+	
+}
