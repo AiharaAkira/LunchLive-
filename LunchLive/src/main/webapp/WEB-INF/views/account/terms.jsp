@@ -132,7 +132,7 @@
 	<input id="check3" type="checkbox">동의합니다<br>
 	<button onclick="http://alsdn3795.cafe24.com/'" class="terms_btn_default" type="button">취소</button><button id="terms_btn_accept" class="terms_btn_default">확인</button>
 	</form>
-<div >footer</div>
+<div></div>
 <script src="resources/js/terms.js" type="text/javascript"></script>
 </body>
 </html>
