@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="resources/css/loginBtn.css">
     <link rel="stylesheet" href="resources/css/faq.css">
     <link rel="stylesheet" href="resources/css/rullet.css">
+    <link rel="stylesheet" href="resources/css/sadari.css">
     
     <!-- NotoSans font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +34,7 @@
     <script src="resources/js/kakaomap.js"></script>
     <script src="resources/js/card.js"></script>
     <script src="resources/js/rullet.js"></script>
+    <script src="resources/js/sadari.js"></script>
     <script src="resources/js/faq.js" type="text/javascript"></script>
     
     <!--<script src="resources/js/sadariGame.js"></script>  -->
@@ -139,7 +141,37 @@
                 <input type="radio" name="radio-btn" id="img-3" />
                 <li class="slide-container">
                     <div class="slide">
-                      <img src="resources/img/slide03.jpg" />
+                      	<div class="wrap">
+						    <div id="div_step1">
+						        <div class="label">사다리 게임!</div>
+						        <div class="p_num">
+						            <label>인원수 선택</label>
+						            <select id="sel_num">
+						                <option value="2">2명</option>  
+						                <option value="3">3명</option>
+						                <option value="4" selected >4명</option>
+						                <option value="5">5명</option>
+						                <option value="6">6명</option>
+						            </select>
+						            <button class="c_btn" type="button" value="만들기" onclick="Yl.init();">
+						            	만들기
+						            </button>
+						        </div>
+						        
+						    </div>
+						    
+						    <div id="div_step2" style="display:none; text-align: center;">
+						        <div class="label">사다리 게임!</div>
+						        <div class="p_start">
+						            	입력후 게임 시작 <button class="c_btn" type="button" value="시작" onclick="Yl.create();">
+						            					시작
+						            				</button>
+						        </div>
+						        
+						    </div>
+						     
+						    <div id="div_body" style="width:1000px;height:450px;border:1px solid #CCCCCC;position:relative;"></div>
+						</div>
                     </div>
                 <div class="nav">
                   <label for="img-2" class="prev">&#x2039;</label>
