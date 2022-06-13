@@ -25,7 +25,7 @@
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=60d3d5b568586bcc670fec01a1366483"></script>
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
 
 	<script src="resources/js/scroll.js"></script>
     <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
@@ -50,6 +50,7 @@
                 <button class="header_btn" onclick="fnMove('3')" >Game</button>
                 <button class="header_btn" onclick="fnMove('4')" >Comunity</button>
                 <button class="header_btn" onclick="fnMove('5')" >FAQ</button>
+                <!--  <button id="login_btn" class="header_btn" onclick="location.href='http://localhost:8080/lunchlive/login.do'" >Login</button> -->
                 <jsp:include page="${login}"></jsp:include>
             </div>
         </header>
@@ -155,7 +156,9 @@
         </div>
         
         <!-- 커뮤니티 -->
-        <div id="div4"  class="contents">Comunity</div>
+        <div id="div4"  class="contents">
+        	Comunity
+        </div>
         
         <!-- FAQ 페이지 -->
         <div id="div5"  class="contents">
