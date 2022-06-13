@@ -66,9 +66,9 @@ public class AccountDAO {
 	}
 
 	public void singUp(Account account, HttpServletRequest request) {
-
+		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
+		
 		String id = request.getParameter("u_id");
 		String pw = encoder.encode(request.getParameter("u_pw"));
 		String nickname = request.getParameter("u_nickname");

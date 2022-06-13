@@ -1,5 +1,5 @@
 package com.globalin.lunchlive.account;
-
+	
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+	
 @Controller
 public class AccountController {
-
+	
 	@Autowired
 	private AccountDAO ado;
-
+	
 	// id 중복 체크 컨트롤러
 	@RequestMapping(value = "/account.idCheck", method = RequestMethod.GET)
 	@ResponseBody
@@ -60,13 +60,14 @@ public class AccountController {
 		public int idPwNicknameCheck(HttpServletRequest request, Account a, HttpServletResponse response) throws IOException {
 			
 			return ado.idPwNicknameCheck(request, response, a);
-		
+			
 		}
-	
+		
 	// 닉네임 중복 체크 컨트롤러
 	@RequestMapping(value = "/account.nicknameCheck", method = RequestMethod.GET)
 	@ResponseBody
 	public int nicknameCheck(@RequestParam("u_nickname") String u_nickname) {
+		
 		return ado.userNicknameCheck(u_nickname);
 		
 	}
@@ -137,7 +138,7 @@ public class AccountController {
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String login(HttpServletRequest request) {
-
+		
 		// 로그인 페이지로 이동
 		ado.loginCheck(request);
 		return "account/loginPage";
