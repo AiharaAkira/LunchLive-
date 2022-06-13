@@ -6,7 +6,7 @@ $(function() {
 	$("#idck").click(function() {
 		var u_id = $('#u_id').val();
 		$.ajax({
-			url : 'http://localhost/lunchlive/account.idCheck?u_id=' + u_id,
+			url : 'http://alsdn3795.cafe24.com/account.idCheck?u_id=' + u_id,
 			type : 'get',
 			success : function(data) {
 				console.log("1 = 중복o / 0 = 중복x : " + data);
@@ -30,7 +30,7 @@ $(function() {
 	$("#nicknameck").click(function() {
 		var u_nickname = $('#u_nickname').val();
 		$.ajax({
-			url : 'http://localhost/lunchlive/account.nicknameCheck?u_nickname=' + u_nickname,
+			url : 'http://alsdn3795.cafe24.com/account.nicknameCheck?u_nickname=' + u_nickname,
 			type : 'get',
 			success : function(data) {
 				console.log("1 = 중복o / 0 = 중복x : " + data);

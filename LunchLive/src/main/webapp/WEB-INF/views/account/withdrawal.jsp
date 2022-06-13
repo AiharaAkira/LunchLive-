@@ -15,19 +15,20 @@
 <title>LunchLive!</title>
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.png"></div>
+	
+	<div id="logo" onclick="location.href='http://alsdn3795.cafe24.com/'"><img src="resources/img/ll_logo.png"></div>
 	
 	<form id="login_box" action="withdrawal.do" method="post" onsubmit="return call();">
-
+		
 		<div id="withrawal_id_div" class="login_menu">아이디</div>
 		<input class="input_login" id="u_id" name="u_id">
 		
 		<div class="login_menu">닉네임</div>
 		<input class="input_login" id="u_nickname" name="u_nickname">
-
+		
 		<br><button id="withdrawal_btn">회원탈퇴</button>
 	</form>
-	<div id="footer">footer</div>
+	<div id="footer"></div>
 	<script src="resources/js/withrawal.js" type="text/javascript"></script>
 </body>
 </html>

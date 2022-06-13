@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+
+#login_btn{
+    margin-right: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 1.0em;
+}

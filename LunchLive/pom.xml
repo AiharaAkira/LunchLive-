@@ -16,6 +16,14 @@
 	</properties>
 	<dependencies>
 	
+	
+	<!-- mariaDB -->
+	<dependency>
+		<groupId>org.mariadb.jdbc</groupId>
+      		<artifactId>mariadb-java-client</artifactId>
+		<version>2.0.3</version>
+	</dependency>
+	
 			<!-- Spring-security 모듈 -->
 	<dependency>
 	    <groupId>org.springframework.security</groupId>

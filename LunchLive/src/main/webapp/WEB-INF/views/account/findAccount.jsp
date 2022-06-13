@@ -14,15 +14,15 @@
 <body>
 <div id="header_wrap">
 <div id="header_wrap_first">
-	<ul><li><div id="logo" onclick="location.href='http://localhost/lunchlive/'"><span>LunchLive!</span></div></li><li id="af_login"><button onclick="location.href='http://localhost/lunchlive/login.do'" id="fa_login_btn">로그인</button></li></ul>
+	<ul><li><div id="logo" onclick="location.href='http://alsdn3795.cafe24.com/'"><span>LunchLive!</span></div></li><li id="af_login"><button onclick="location.href='http://alsdn3795.cafe24.com/login.do'" id="fa_login_btn">로그인</button></li></ul>
 </div>
 <div id="header_wrap_second">
-	<a class="fa_menu" onclick="location.href='http://localhost/lunchlive/findId.go'">아이디찾기</a><a class="fa_menu" onclick="location.href='http://localhost/lunchlive/findPw.go'">비밀번호찾기</a>
+	<a class="fa_menu" onclick="location.href='http://alsdn3795.cafe24.com/findId.go'">아이디찾기</a><a class="fa_menu" onclick="location.href='http://alsdn3795.cafe24.com/findPw.go'">비밀번호찾기</a>
 </div>
 </div>
 <div id="fa_idpwbox_warraper">
 	<jsp:include page="${findAccounts}"></jsp:include>
 </div>
-<div id="footer">footer</div>
+<div id="footer"></div>
 </body>
 </html>

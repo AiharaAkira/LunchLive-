@@ -29,22 +29,21 @@
 
 	<context:component-scan
 		base-package="com.globalin.lunchlive" />
-
 	<beans:bean id="dataSource"
-		class="org.apache.commons.dbcp2.BasicDataSource">
-		<beans:property name="driverClassName"
-			value="oracle.jdbc.driver.OracleDriver" />
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<beans:property name="driverClass"
+			value="org.mariadb.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@DESKTOP-C4H3JEL:1521:orcl" />
-		<beans:property name="username" value="ll" />
-		<beans:property name="password" value="ll" />
+			value="jdbc:mariadb://localhost:3306/alsdn3795" />
+		<beans:property name="username" value="alsdn3795" />
+		<beans:property name="password" value="gychoi2511" />
 	</beans:bean>
-
+	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
-
+	
 	<beans:bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />

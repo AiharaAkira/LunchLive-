@@ -14,7 +14,7 @@
 <script src="resources/js/validCheck.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://localhost/lunchlive/'"><img src="resources/img/ll_logo.png"></div>
+	<div id="logo" onclick="location.href='http://alsdn3795.cafe24.com/'"><img src="resources/img/ll_logo.png"></div>
 	<form action="signUp.go" onsubmit="return call();">
 	<div class="terms_div" id="terms_div_first">
 		<h3 class="article_title">제1약관</h3>
@@ -130,9 +130,9 @@
 본 약관은 한국어를 정본으로 합니다. 본 약관 또는 런치라이브 서비스와 관련된 여러분과 런치라이브와의 관계에는 대한민국의 법령이 적용됩니다. 그리고 본 약관 또는 런치라이브 서비스와 관련하여 여러분과 네이버 사이에 분쟁이 발생할 경우, 그 분쟁의 처리는 대한민국 '민사소송법'에서 정한 절차를 따릅니다.</p>
 	</div>
 	<input id="check3" type="checkbox">동의합니다<br>
-	<button onclick="location.href='http://localhost/lunchlive/'" class="terms_btn_default" type="button">취소</button><button id="terms_btn_accept" class="terms_btn_default">확인</button>
+	<button onclick="http://alsdn3795.cafe24.com/'" class="terms_btn_default" type="button">취소</button><button id="terms_btn_accept" class="terms_btn_default">확인</button>
 	</form>
-<div >footer</div>
+<div></div>
 <script src="resources/js/terms.js" type="text/javascript"></script>
 </body>
 </html>
