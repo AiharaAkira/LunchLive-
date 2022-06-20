@@ -126,15 +126,16 @@
                     <div class="slide">
                     	 <div class="rouletter">
         					<div class="rouletter-bg">
-        					<div class="rouletter-wacu"></div></div>
+        						<div class="rouletter-wacu"></div>
+        					</div>
        						<div class="rouletter-arrow"></div>
         					<button class="rouletter-btn">start</button>
     					</div> 
                     </div>
-                <div class="nav">
-                  <label for="img-1" class="prev">&#x2039;</label>
-                  <label for="img-3" class="next">&#x203a;</label>
-                </div>
+	                <div class="nav">
+	                  <label for="img-1" class="prev">&#x2039;</label>
+	                  <label for="img-3" class="next">&#x203a;</label>
+	                </div>
                 </li>
             
             <!-- 사다리 -->

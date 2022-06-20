@@ -1,68 +1,132 @@
-@charset "UTF-8";
-
-body {
-	background: #f5f6f7;
-	font-family: 'Gothic A1', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.wrap {
+    padding-top: 100px;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/ll_background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    text-align: center;
+}
+.wrap .logo_title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFD24C;
+    text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.form-wrap {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+}
+.button-wrap {
+    width: 230px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 600px 9px #fcae8f;
+    border-radius: 30px;
+    text-align: center;
+}
+.togglebtn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn {
+    top: 0;
+    left: 0;
+    margin-left: 50%;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    /* background: linear-gradient(to right, #ff105f, #ffad06); */
+    background-color: #FFD24C;
+    border-radius: 30px;
+    transition: .5s;
+}
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+.social-icons img {
+    width: 30px ;
+    cursor: pointer;
+}
+.input-group {
+    /* top: 180px; */
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+    text-align: center;
 }
 
-#logo {
-	text-align: center;
-	margint: 0 auto;
-	cursor: pointer;
-}
-
-#sign_id_txt{
-	margin-top: 5%
-}
-
-#logo img {
-	width: 13%;
-}
-
-#sign_submit_btn {
-	color: #fff;
-	border: solid 1px rgba(0, 0, 0, .08);
-	background-color: orange;
-	width: 30%;
-	padding: 15px 0 15px;
-	font-size: 18px;
-	cursor: pointer;
-}
-
-.sign_title {
-	font-size: 14px;
-	font-weight: 700;
-}
-
-.sign_input_wrap {
-	width: 70%;
-	margin-left: 30%;
-	padding-left: 9%;
+.input-group .sign_check_btn {
+    width: 80px;
+    height: 30px;
+    margin: 14px 0 0 10px;
+    background-color: #FFD24C;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .sign_input_default {
-
-	width: 30%;
-	height: 51px;
-	border: solid 1px #dadada;
-	padding: 10px 110px 10px 14px;
-	background: #fff;
-	box-sizing: border-box;
-	vertical-align: top;
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    /* background: linear-gradient(to right, #ff105f, #ffad06); */
+    background-color: #FFD24C;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.checkbox {
+    margin: 30px 10px 30px 0;
+}
+span {
+    margin: 30px 0 30px 0;
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    /* position: absolute; */
+}
+.srh_pw {
+    margin: 0 20px;
+    color: #777;
+    font-size: 12px;
+    text-decoration: none;
+    /* bottom: 68px; */
+    /* position: absolute; */
 }
 
-.sign_check_btn {
-	width: 115px;
-	height: 51px;
-	padding: 15px 0 16px;
-	text-align: center;
-	box-sizing: border-box;
-	color: #fff;
-	border: solid 1px rgba(0, 0, 0, .08);
-	background-color: orange;
-	cursor: pointer;
-}
 
-#footer {
-	text-align: center;
-}
+#formSignUp {
+    left: 50px;
+} 
