@@ -33,8 +33,8 @@
 		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
 		<beans:property name="driverClass"
 			value="org.mariadb.jdbc.Driver" />
-		<beans:property name="url"
-			value="jdbc:mariadb://localhost:3306/alsdn3795" />
+		   <beans:property name="url"
+            value="jdbc:mariadb://alsdn3795.cafe24.com:alsdn3795" />
 		<beans:property name="username" value="alsdn3795" />
 		<beans:property name="password" value="gychoi2511" />
 	</beans:bean>
@@ -53,6 +53,9 @@
 			<beans:list>
 				<beans:value>classpath:mapper.xml</beans:value>
 				<beans:value>classpath:accountMapper.xml</beans:value>
+				<beans:value>classpath:communityMapper.xml</beans:value>
+				<beans:value>classpath:commentMapper.xml</beans:value>
+				<beans:value>classpath:pageMapper.xml</beans:value>
 			</beans:list>
 
 		</beans:property>

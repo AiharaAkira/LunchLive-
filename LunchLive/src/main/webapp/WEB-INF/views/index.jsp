@@ -157,7 +157,13 @@
         
         <!-- 커뮤니티 -->
         <div id="div4"  class="contents">
-        	Comunity
+        	<table border="1">
+        	<c:forEach var="c" items="${community}">
+        		<tr>
+        			<td>${c.c_title}</td>
+        		</tr>
+        	</c:forEach>
+        	</table>
         </div>
         
         <!-- FAQ 페이지 -->
