@@ -1,3 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.globalin.lunchlive.community.CommunityMapper"></mapper>
+<mapper namespace="com.globalin.lunchlive.community.CommunityMapper">
+
+<select id="getAllcommunity" resultType="com.globalin.lunchlive.community.Community">
+	SELECT * FROM community
+</select>
+
+<select id="getCommunity" parameterType="com.globalin.lunchlive.community.Community" resultType="com.globalin.lunchlive.community.Community">
+	SELECT * FROM community where c_no = #{c_no}
+</select>
+
+<update id="updateDo" parameterType="com.globalin.lunchlive.community.Community" >
+
+	update community set c_title = #{c_title}, c_contents = #{c_contents}
+	where c_no = #{c_no}
+</update>
+
+<insert id="writeDo" parameterType="com.globalin.lunchlive.community.Community">
+
+INSERT INTO community VALUES (0,#{c_title}, #{c_contents},'파일',1, 0, 1,SYSDATE());
+</insert>
+
+<delete id="deleteDo" parameterType="com.globalin.lunchlive.community.Community">
+
+	delete from community
+	where c_no = #{c_no}
+	
+</delete>
+
+
+
+
+</mapper>

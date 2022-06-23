@@ -110,6 +110,20 @@ public class AccountDAO {
 
 		}
 	}
+	
+	
+	public boolean loginCheckByCommunity(HttpServletRequest request) {
+		Account account = (Account) request.getSession().getAttribute("loginAccount");
+
+		if (account != null) {
+			request.setAttribute("login", "../account/loginOK.jsp");
+			return true;
+		} else {
+			request.setAttribute("login", "../account/loginReady.jsp");
+			return false;
+
+		}
+	}
 
 	public void findIdDo(HttpServletRequest request, Account account) {
 

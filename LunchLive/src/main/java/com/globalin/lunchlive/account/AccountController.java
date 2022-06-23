@@ -11,12 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.globalin.lunchlive.community.CommunityDAO;
 	
 @Controller
 public class AccountController {
 	
 	@Autowired
 	private AccountDAO ado;
+	
+	@Autowired
+	private CommunityDAO cdo;
 	
 	// id 중복 체크 컨트롤러
 	@RequestMapping(value = "/account.idCheck", method = RequestMethod.GET)
@@ -91,6 +96,7 @@ public class AccountController {
 		ado.deleteAccount(request, respone, a);
 		ado.logout(request);
 		ado.loginCheck(request);
+		cdo.getAllCommunity(request);
 		return "redirect:/";
 	}
 	
@@ -121,6 +127,7 @@ public class AccountController {
 
 		ado.singUp(account, request);
 		ado.loginCheck(request);
+		cdo.getAllCommunity(request);
 		return "redirect:/";
 	}
 	
@@ -150,6 +157,7 @@ public class AccountController {
 		// 로그인
 		ado.login(request, account, response);
 		ado.loginCheck(request);
+		cdo.getAllCommunity(request);
 		
 		return "index";
 	}
@@ -159,6 +167,7 @@ public class AccountController {
 		// 로그인
 		ado.logout(request);
 		ado.loginCheck(request);
+		cdo.getAllCommunity(request);
 		return "redirect:/";
 	}
 	
