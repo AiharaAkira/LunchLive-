@@ -10,7 +10,7 @@ $(function() {
 		var u_pw = $('#input_login_pw').val();
 		
 		$.ajax({
-			url : 'http://alsdn3795.cafe24.com/account.idPwCheck?u_id=' + u_id+'&u_pw='+u_pw,
+			url : 'http://localhost/lunchlive/account.idPwCheck?u_id=' + u_id+'&u_pw='+u_pw,
 			type : 'post',
 			success : function(data) {
 				

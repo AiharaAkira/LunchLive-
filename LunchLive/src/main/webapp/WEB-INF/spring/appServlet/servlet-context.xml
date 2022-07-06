@@ -56,6 +56,7 @@
 				<beans:value>classpath:communityMapper.xml</beans:value>
 				<beans:value>classpath:commentMapper.xml</beans:value>
 				<beans:value>classpath:pageMapper.xml</beans:value>
+				<beans:value>classpath:likeTo.xml</beans:value>
 			</beans:list>
 
 		</beans:property>

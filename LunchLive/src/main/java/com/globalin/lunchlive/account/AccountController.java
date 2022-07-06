@@ -13,9 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.globalin.lunchlive.community.CommunityDAO;
+import com.globalin.lunchlive.like.LikeDAO;
 	
 @Controller
 public class AccountController {
+	
+	@Autowired
+	private LikeDAO ldo;
 	
 	@Autowired
 	private AccountDAO ado;
@@ -157,6 +161,7 @@ public class AccountController {
 		// 로그인
 		ado.login(request, account, response);
 		ado.loginCheck(request);
+		ldo.likeCheckRe(request);
 		cdo.getAllCommunity(request);
 		
 		return "index";

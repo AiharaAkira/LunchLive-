@@ -17,6 +17,8 @@
 			<td colspan="4"> <textarea name="c_contents" placeholder="내용을 입력해주세요."></textarea>></td>
 		</tr>
 
+		<input type="hidden" name="u_id" value="${sessionScope.loginAccount.u_id}">
+
 	</table>
 	<button value="${communities.c_no}" name="c_no">글쓰기</button>
 	</form>

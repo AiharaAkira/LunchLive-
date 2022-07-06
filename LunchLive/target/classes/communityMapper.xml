@@ -16,10 +16,14 @@
 	where c_no = #{c_no}
 </update>
 
-<insert id="writeDo" parameterType="com.globalin.lunchlive.community.Community">
+<insert id="writeDo" parameterType="Map">
 
-INSERT INTO community VALUES (0,#{c_title}, #{c_contents},'파일',1, 0, 1,SYSDATE());
+INSERT INTO community VALUES (0,#{c_title}, #{c_contents},'파일', 0, page_seq(), SYSDATE(), #{u_id}) 
+
 </insert>
+
+
+
 
 <delete id="deleteDo" parameterType="com.globalin.lunchlive.community.Community">
 

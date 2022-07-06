@@ -40,7 +40,7 @@ public class CommunityController {
 		ado.loginCheck(request);
 		cdo.getAllCommunity(request);
 		
-		return "index";
+		return "redirect:/";
 	}
 
 	
@@ -59,7 +59,7 @@ public class CommunityController {
 		cdo.detailDo(request);
 		ado.loginCheck(request);
 		cdo.getAllCommunity(request);
-		return "index";
+		return "redirect:/";
 	}
 	
 	
@@ -70,7 +70,7 @@ public class CommunityController {
 			cdo.deleteDo(request);
 			ado.loginCheck(request);
 			cdo.getAllCommunity(request);
-			return "index";
+			return "redirect:/";
 		}
 	
 	

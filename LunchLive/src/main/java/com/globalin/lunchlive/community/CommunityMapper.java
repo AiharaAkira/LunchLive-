@@ -1,6 +1,7 @@
 package com.globalin.lunchlive.community;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CommunityMapper {
 
@@ -12,6 +13,6 @@ public interface CommunityMapper {
 
 	int deleteDo(Community c);
 
-	int writeDo(Community c);
+	int writeDo(Map<String, String> c);
 
 }

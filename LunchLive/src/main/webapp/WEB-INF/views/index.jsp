@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,13 +27,13 @@
 
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
+<!-- <script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script> -->
 
 <script src="resources/js/scroll.js"></script>
 <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
-<script src="/js/map_cons.js"></script>
-<script src="resources/js/kakaomap.js"></script>
+<!-- <script src="/js/map_cons.js"></script>
+<script src="resources/js/kakaomap.js"></script> -->
 <script src="resources/js/card.js"></script>
 <script src="resources/js/rullet.js"></script>
 <script src="resources/js/faq.js" type="text/javascript"></script>
@@ -64,7 +64,7 @@
 			</div>
 			<img src="resources/img/sky.jpg">
 		</div>
-
+		
 		<!-- Map, MapRoadView 페이지 -->
 		<div id="div2" class="contents">
 			<input id="search" placeholder="검색!!" style="margin-top: 70px;">
@@ -81,7 +81,7 @@
 				<button onclick="defaultSize()">RoadView 닫기</button>
 			</div>
 		</div>
-
+		
 		<!-- 게임 페이지 -->
 		<div id="div3" class="contents">
 			<!-- 카드 -->
@@ -157,21 +157,51 @@
 					id="img-dot-3"></label></li>
 			</ul>
 		</div>
-
+		
 		<!-- 커뮤니티 -->
 		<div id="div4" class="contents">
 			<table border="1">
-
 				<c:forEach var="c" items="${ communities}">
 					<tr>
-						<td onclick="location.href='http://localhost/lunchlive/detail.go?c_no='+${c.c_no}">${c.c_title}</td>
-						<td>좋아요 ${c.c_like}</td>
-						<td>${c.c_date}</td>
+						<td onclick="location.href='http://localhost/lunchlive/detail.go?c_no='+${c.c_no}">|${c.c_title}</td>
+						<td>
+						<input id="like_hidden_c_no" type="hidden" value="${c.c_no}">
+						<input id="like_hidden_u_id" type="hidden" value="${sessionScope.loginAccount.u_id}">
+						|
+						<c:choose>
+						
+					<%-- 	<c:when test="${not empty likeChecked}">
+						
+						<button  class ="like_btn_first" value="${c.c_no}">
+						<img id="like_img" src="resources/img/likeon.png" style="width:30px">
+						</button>
+						
+						</c:when> --%>
+						
+						<c:when test="${sessionScope.loginAccount != null}">
+						
+						<button  class ="like_btn_first" value="${c.c_no}">
+						<img id="like_img" src="resources/img/likeon.png" style="width:30px">
+						</button>
+						
+						</c:when>
+						
+						
+						
+						<c:otherwise>
+						<button>
+						<img id="like_img${c.c_no}" src="resources/img/likeon.png" style="width:30px">
+						</button>
+						</c:otherwise>
+						</c:choose>
+						 ${c.c_like}
+						</td>
+						<td>|<fmt:formatDate value="${c.c_date}" pattern="yyyy.MM.dd"/></td>
 					</tr>
-
 				</c:forEach>
 			</table>
-			<div><button onclick = "location.href='http://localhost/lunchlive/write.go'">글쓰기</button></div>
+			
+			<c:if test="${sessionScope.loginAccount != null}"><div><button onclick = "location.href='http://localhost/lunchlive/write.go'">글쓰기</button></div></c:if>
 			
 		</div>
 		
@@ -225,7 +255,7 @@
 
 					<li class="faq_question"><span class="faq_txt">❔런치라이브에서
 							제공하는 서비스에 대해서 궁금합니다.</span></li>
-
+							
 					<li class="faq_answer"><span class="faq_txt">✔런치라이브는
 							직장인, 학생분들과 같이 점심 메뉴를 고르기 힘들어 하는 분들을 위해서 점심메뉴를 편하게 결정하기 위한 서비스를
 							제공하고 있습니다. 먼저, 가게명을 알고 계실 경우 가게 위치를 찾을 수 있는 지도 기능을 제공해 드리고 있습니다.
@@ -244,6 +274,10 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	
+	<script src="resources/js/like.js"></script>
 </body>
 <script>
 	function halfSize() {
@@ -264,7 +298,6 @@
 		map2.style.transition = ".5s";
 	}
 </script>
-
 
 
 
