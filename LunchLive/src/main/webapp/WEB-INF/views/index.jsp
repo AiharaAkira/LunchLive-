@@ -12,23 +12,20 @@
 <link rel="stylesheet" href="resources/css/index.css">
 <link rel="stylesheet" href="resources/css/reset.css">
 
-<link rel="stylesheet" href="resources/css/card.css">
-<link rel="stylesheet" href="resources/css/loginBtn.css">
-<link rel="stylesheet" href="resources/css/faq.css">
-<link rel="stylesheet" href="resources/css/rullet.css">
+ <link rel="stylesheet" href="resources/css/card.css">
+ <link rel="stylesheet" href="resources/css/loginBtn.css">
+ <link rel="stylesheet" href="resources/css/faq.css">
+ <link rel="stylesheet" href="resources/css/rullet.css">
+ <link rel="stylesheet" href="resources/css/sadari.css">
 
 <!-- NotoSans font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 <!-- NotoSans font End-->
 
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.js"></script>
-<!-- <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
 
 <script src="resources/js/scroll.js"></script>
 <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
@@ -36,6 +33,7 @@
 <script src="resources/js/kakaomap.js"></script> -->
 <script src="resources/js/card.js"></script>
 <script src="resources/js/rullet.js"></script>
+<script src="resources/js/sadari.js"></script>
 <script src="resources/js/faq.js" type="text/javascript"></script>
 
 <!--<script src="resources/js/sadariGame.js"></script>  -->
@@ -143,14 +141,43 @@
 				<input type="radio" name="radio-btn" id="img-3" />
 				<li class="slide-container">
 					<div class="slide">
-						<img src="resources/img/slide03.jpg" />
-					</div>
+                      	<div class="wrap">
+						    <div id="div_step1">
+						        <div class="label">사다리 게임!</div>
+						        <div class="p_num">
+						            <label>인원수 선택</label>
+						            <select id="sel_num">
+						                <option value="2">2명</option>  
+						                <option value="3">3명</option>
+						                <option value="4" selected >4명</option>
+						                <option value="5">5명</option>
+						                <option value="6">6명</option>
+						            </select>
+						            <button class="c_btn" type="button" value="만들기" onclick="Yl.init();">
+						            	만들기
+						            </button>
+						        </div>
+						        
+						    </div>
+						    
+						    <div id="div_step2" style="display:none; text-align: center;">
+						        <div class="label">사다리 게임!</div>
+						        <div class="p_start">
+						            	입력후 게임 시작 <button class="c_btn" type="button" value="시작" onclick="Yl.create();">
+						            					시작
+						            				</button>
+						        </div>
+						        
+						    </div>
+						     
+						    <div id="div_body" style="width:1000px;height:450px;border:1px solid #CCCCCC;position:relative;"></div>
+						</div>
+                    </div>
 					<div class="nav">
 						<label for="img-2" class="prev">&#x2039;</label> <label
 							for="img-1" class="next">&#x203a;</label>
 					</div>
 				</li>
-
 				<li class="nav-dots"><label for="img-1" class="nav-dot"
 					id="img-dot-1"></label> <label for="img-2" class="nav-dot"
 					id="img-dot-2"></label> <label for="img-3" class="nav-dot"
@@ -186,12 +213,11 @@
 						
 						</c:when>
 						
-						
-						
 						<c:otherwise>
 						<button>
 						<img id="like_img${c.c_no}" src="resources/img/likeon.png" style="width:30px">
 						</button>
+
 						</c:otherwise>
 						</c:choose>
 						 ${c.c_like}
@@ -214,7 +240,8 @@
 				<ul>
 
 					<li class="faq_question"><span class="faq_txt">❔회원탈퇴를
-							하고 싶어요!</span></li>
+							하고 싶어요!</span>
+          </li>
 
 					<li class="faq_answer"><span class="faq_txt"> ✔탈퇴를 하시기
 							위해서는 보안상의 문제로 인하여, 반드시 로그인을 하셔야 회원탈퇴가 가능합니다. ※로그인 후의 이 자리에 있는
@@ -274,10 +301,9 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	
+
 	<script src="resources/js/like.js"></script>
+
 </body>
 <script>
 	function halfSize() {
