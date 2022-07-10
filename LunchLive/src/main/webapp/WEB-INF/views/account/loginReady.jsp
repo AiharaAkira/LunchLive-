@@ -12,6 +12,6 @@
 <title>LunchLive!</title>
 </head>
 <body>
-<button id="login_btn" class="header_btn" onclick="location.href='http://localhost/lunchlive/login.do'">login</button>
+<button id="login_btn" class="header_btn" onclick="location.href='http://alsdn3795.cafe24.com/login.do'">login</button>
 </body>
 </html>

@@ -6,19 +6,44 @@
 	SELECT * FROM community
 </select>
 
+<select id="getNextFreeDetail" parameterType="Map" resultType="com.globalin.lunchlive.community.Community">
+
+select * from community where c_date >(select c_date from community where c_no =#{1})and rownum = 1
+
+</select>
+
+<select id="getPrevFreeDetail" parameterType="Map" resultType="com.globalin.lunchlive.community.Community">
+
+select * from (select * from community order by c_date desc) 
+
+where c_date &lt;(select c_date from community where c_no =#{1}) and rownum =1
+
+
+</select>
+
+<select id="getNoticeList" parameterType="Map" resultType="com.globalin.lunchlive.community.Community">
+
+select * from ( select @rownum:=@rownum+1, community.* from (select * from community order by c_date desc) community)
+				 where @rownum between #{1} and #{2}
+</select>
+
+<select id="getPage" resultType="Integer">
+	SELECT count(*) FROM community
+</select>
+
 <select id="getCommunity" parameterType="com.globalin.lunchlive.community.Community" resultType="com.globalin.lunchlive.community.Community">
 	SELECT * FROM community where c_no = #{c_no}
 </select>
 
 <update id="updateDo" parameterType="com.globalin.lunchlive.community.Community" >
 
-	update community set c_title = #{c_title}, c_contents = #{c_contents}
+	update community set c_title = #{c_title}, c_contents = #{c_contents}, c_file=#{c_file}
 	where c_no = #{c_no}
 </update>
 
 <insert id="writeDo" parameterType="Map">
 
-INSERT INTO community VALUES (0,#{c_title}, #{c_contents},'파일', 0, page_seq(), SYSDATE(), #{u_id}) 
+INSERT INTO community VALUES (0,#{c_title}, #{c_contents},#{c_file}, 0, page_seq(), SYSDATE(), #{u_id}) 
 
 </insert>
 

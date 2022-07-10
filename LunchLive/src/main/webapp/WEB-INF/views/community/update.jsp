@@ -6,9 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>LunchLive!</title>
+<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
 </head>
+<label onclick="location.href='http://alsdn3795.cafe24.com/'"> <img 
+				src="resources/img/ll_logo.png" style="width: 70px;">
+			</label>
 
-	<form action="update.do" method="post">
+
+	<form action="update.do" method="post" enctype="multipart/form-data">
 	
 	<table border=1>
 	
@@ -17,7 +22,9 @@
 			<td>${communities.c_like}</td>
 			<td><fmt:formatDate value="${communities.c_date}" pattern="yyyy.MM.dd"/></td>
 		</tr>
-		
+		<tr>
+			<td> <input type="file" name="c_file"> </td>
+		</tr>
 		<tr>
 			<td colspan="3"><input name="c_contents" value="${communities.c_contents}"></td>
 		</tr>

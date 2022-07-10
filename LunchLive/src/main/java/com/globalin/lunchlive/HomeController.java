@@ -25,6 +25,9 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest request) {
+
+		
+		
 		cdo.getAllCommunity(request);
 		ldo.likeCheckRe(request);
 		ado.loginCheck(request);

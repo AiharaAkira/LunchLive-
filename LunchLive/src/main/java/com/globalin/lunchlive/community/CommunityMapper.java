@@ -15,4 +15,12 @@ public interface CommunityMapper {
 
 	int writeDo(Map<String, String> c);
 
+	int getPage();
+
+	List<Community> getNoticeList(Map<String, Integer> n);
+
+	List<Community> getNextFreeDetail(Map<String, String> c);
+
+	List<Community> getPrevFreeDetail(Map<String, String> c);
+
 }
