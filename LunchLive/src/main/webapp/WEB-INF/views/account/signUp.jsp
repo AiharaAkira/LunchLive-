@@ -17,40 +17,31 @@
 
 </head>
 <body>
-	<div id="logo" onclick="location.href='http://alsdn3795.cafe24.com/'">
-		<img src="resources/img/ll_logo.png">
-	</div>
-	<form action="signUp.do" name="form" id="formSignUp" method="post"
-		onsubmit="return call();">
-		<div class="sign_input_wrap">
-			<h3 class="sign_title" id="sign_id_txt">아이디</h3>
-			<input class="sign_input_default" id="u_id" name="u_id">
-			<button class="sign_check_btn" type="button" id="idck">아이디중복
-				검사</button>
-			<br>
-		</div>
-		<div class="sign_input_wrap">
-			<h3  class="sign_title">비밀번호</h3>
-			<input type="password" class="sign_input_default" id="u_pw" name="u_pw"><br>
-		</div>
-		<div class="sign_input_wrap">
-			<h3  class="sign_title">pw확인</h3>
-			<input type="password" id="u_pwCheck" class="sign_input_default"><br>
-		</div>
-		<div class="sign_input_wrap">
-			<h3 class="sign_title">닉네임</h3>
-			<input class="sign_input_default" name="u_nickname" id="u_nickname">
-			<button class="sign_check_btn" type="button" id="nicknameck">닉네임중복
-				검사</button>
-		</div>
-		<div class="sign_input_wrap">
-			<br>
-			<button id="sign_submit_btn">회원가입</button>
-		</div>
-	</form>
-	<div id="footer"></div>
+	<div class="wrap">
+        <div id="logo" class="logo_title" onclick="location.href='http://alsdn3795.cafe24.com/'">LUNCH LIVE</div>
+        <div class="form-wrap">
+            <div class="button-wrap">
+                <div id="btn"></div>
+                <button type="button" class="togglebtn" onclick="location.href='http://alsdn3795.cafe24.com/login.do'" >로그인</button>
+                <button type="button" class="togglebtn">회원가입</button>
+            </div>
+            <form id="formSignUp" action="signUp.do" method="post" class="input-group" onsubmit="return call();">
+                <div style="display: flex;">
+                    <input type="id" id="u_id" class="sign_input_default" placeholder="아이디" name="u_id">
+                    <button type="button" id="idck" class="sign_check_btn">중복검사</button>
+                </div>
+                <input type="password" id="u_pw" class="sign_input_default" placeholder="비밀번호" name="u_pw">
+                <input type="password" id="u_pwCheck" class="sign_input_default" placeholder="비밀번호 확인" name="u_pwCheck">
+                <div style="display: flex;">
+                    <input type="nickname" id="u_nickname" class="sign_input_default" placeholder="닉네임" name="u_nickname">
+                    <button type="button" id="nicknameck" class="sign_check_btn">중복검사</button>
+                </div>
+                
+                <button id="sign_submit_btn" class="submit" style="margin-top: 50px;">회원가입</button>
+            </form>
+        </div>
+    </div>
+</body>
 	<script src="resources/js/signUp.js" type="text/javascript"></script>
 	<script src="resources/js/signUpValid.js" type="text/javascript"></script>
-
-</body>
 </html>
