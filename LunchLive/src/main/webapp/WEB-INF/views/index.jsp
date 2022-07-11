@@ -29,8 +29,8 @@
 
 <script src="resources/js/scroll.js"></script>
 <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
-<!-- <script src="/js/map_cons.js"></script>
-<script src="resources/js/kakaomap.js"></script> -->
+<!-- <script src="/js/map_cons.js"></script> -->
+<script src="resources/js/kakaomap.js"></script>
 <script src="resources/js/card.js"></script>
 <script src="resources/js/rullet.js"></script>
 <script src="resources/js/sadari.js"></script>
@@ -228,7 +228,7 @@
 				</c:forEach>
 			</table>
 			
-			<c:if test="${sessionScope.loginAccount != null}"><div><button onclick = "location.href='http://localhost/lunchlive/write.go'">글쓰기</button></div></c:if>
+			<c:if test="${sessionScope.loginAccount != null}"><div><button onclick = "location.href='http://alsdn3795.cafe24.com/write.go'">글쓰기</button></div></c:if>
         </div>
         
         <!-- FAQ 페이지 -->
