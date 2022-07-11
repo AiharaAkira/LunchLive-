@@ -1,147 +1,146 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>    
-    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-	<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
-	<title>LunchLive!</title>
-	
-	<link rel="stylesheet" href="resources/css/index.css">
-    <link rel="stylesheet" href="resources/css/reset.css">
-    
-    <link rel="stylesheet" href="resources/css/card.css">
-    <link rel="stylesheet" href="resources/css/loginBtn.css">
-    <link rel="stylesheet" href="resources/css/faq.css">
-    <link rel="stylesheet" href="resources/css/rullet.css">
-    <link rel="stylesheet" href="resources/css/sadari.css">
-    
-    <!-- NotoSans font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-    <!-- NotoSans font End-->
-    
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="resources/img/web_icon_ll.png">
+<title>LunchLive!</title>
 
-	<script src="resources/js/scroll.js"></script>
-    <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
-    <script src="/js/map_cons.js"></script>
-    <script src="resources/js/kakaomap.js"></script>
-    <script src="resources/js/card.js"></script>
-    <script src="resources/js/rullet.js"></script>
-    <script src="resources/js/sadari.js"></script>
-    <script src="resources/js/faq.js" type="text/javascript"></script>
-    
-    <!--<script src="resources/js/sadariGame.js"></script>  -->
-	    
+<link rel="stylesheet" href="resources/css/index.css">
+<link rel="stylesheet" href="resources/css/reset.css">
+
+ <link rel="stylesheet" href="resources/css/card.css">
+ <link rel="stylesheet" href="resources/css/loginBtn.css">
+ <link rel="stylesheet" href="resources/css/faq.css">
+ <link rel="stylesheet" href="resources/css/rullet.css">
+ <link rel="stylesheet" href="resources/css/sadari.css">
+
+<!-- NotoSans font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<!-- NotoSans font End-->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
+
+<script src="resources/js/scroll.js"></script>
+<!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
+<!-- <script src="/js/map_cons.js"></script>
+<script src="resources/js/kakaomap.js"></script> -->
+<script src="resources/js/card.js"></script>
+<script src="resources/js/rullet.js"></script>
+<script src="resources/js/sadari.js"></script>
+<script src="resources/js/faq.js" type="text/javascript"></script>
+
+<!--<script src="resources/js/sadariGame.js"></script>  -->
+
 </head>
 <body>
 	<div id="wrap">
-        <header class="header">
-            <label onclick="fnMove('1')">
-              <img src="resources/img/ll_logo.png" style="width: 70px;">
-            </label>
-            <div class="right-items">
-                <button class="header_btn" onclick="fnMove('1')" >LunchLive</button>
-                <button class="header_btn" onclick="fnMove('2')" >Map</button>
-                <button class="header_btn" onclick="fnMove('3')" >Game</button>
-                <button class="header_btn" onclick="fnMove('4')" >Comunity</button>
-                <button class="header_btn" onclick="fnMove('5')" >FAQ</button>
-                <!--  <button id="login_btn" class="header_btn" onclick="location.href='http://localhost:8080/lunchlive/login.do'" >Login</button> -->
-                <jsp:include page="${login}"></jsp:include>
-            </div>
-        </header>
-        <!-- main 페이지 -->
-        <div id="div1" class="contents">
-            <div class="back">
-            	<p>LunchLive!!</p>
-            </div>
-            <img src="resources/img/sky.jpg">
-        </div>
+		<header class="header">
+			<label onclick="fnMove('1')"> <img
+				src="resources/img/ll_logo.png" style="width: 70px;">
+			</label>
+			<div class="right-items">
+				<button class="header_btn" onclick="fnMove('1')">LunchLive</button>
+				<button class="header_btn" onclick="fnMove('2')">Map</button>
+				<button class="header_btn" onclick="fnMove('3')">Game</button>
+				<button class="header_btn" onclick="fnMove('4')">Comunity</button>
+				<button class="header_btn" onclick="fnMove('5')">FAQ</button>
+				<!--  <button id="login_btn" class="header_btn" onclick="location.href='http://localhost:8080/lunchlive/login.do'" >Login</button> -->
+				<jsp:include page="${login}"></jsp:include>
+			</div>
+		</header>
+		<!-- main 페이지 -->
+		<div id="div1" class="contents">
+			<div class="back">
+				<p>LunchLive!!</p>
+			</div>
+			<img src="resources/img/sky.jpg">
+		</div>
+		
+		<!-- Map, MapRoadView 페이지 -->
+		<div id="div2" class="contents">
+			<input id="search" placeholder="검색!!" style="margin-top: 70px;">
+			<div class="map_wrap">
+				<div id="map1">
+					<div id="map" style="width: 100%; height: 100%;"></div>
+				</div>
+				<div id="map2">
+					<div id="roadview" style="width: 100%; height: 100%"></div>
+				</div>
+			</div>
+			<div>
+				<button onclick="halfSize()">RoadView 보기</button>
+				<button onclick="defaultSize()">RoadView 닫기</button>
+			</div>
+		</div>
+		
+		<!-- 게임 페이지 -->
+		<div id="div3" class="contents">
+			<!-- 카드 -->
+			<ul class="slides">
+				<input type="radio" name="radio-btn" id="img-1" checked />
+				<li class="slide-container">
+					<div class="slide">
+						<div id="g_form" style="margin-top: 120px">
+							<button id="kfood" class="card" name="pw" value="한식">
+								<img alt="" src="resources/img/cardImg.png">
+							</button>
 
-        <!-- Map, MapRoadView 페이지 -->
-        <div id="div2"  class="contents">
-        	<input id="search" placeholder="검색!!" style="margin-top: 70px;">
-            <div class="map_wrap">
-                <div id="map1">
-                	<div id="map" style="width: 100%; height: 100%;"></div>
-                </div>
-                <div id="map2">
-                	<div id="roadview" style="width: 100%; height: 100%"></div>	
-                </div>
-            </div>
-            <div>
-                <button onclick="halfSize()" >RoadView 보기</button>
-                <button onclick="defaultSize()" >RoadView 닫기</button>
-            </div>
-        </div>
+							<button id="cfood" class="card" name="pw" value="중식">
+								<img alt="" src="resources/img/cardImg.png">
+							</button>
 
-        <!-- 게임 페이지 -->
-        <div id="div3"  class="contents">
-            <!-- 카드 -->
-            <ul class="slides">
-                <input type="radio" name="radio-btn" id="img-1" checked />
-                <li class="slide-container">
-                <div class="slide">
-                	<div id="g_form" style="margin-top: 120px">
-				    	<button  id="kfood"class="card" name="pw" value="한식">
-				    		<img alt="" src="resources/img/cardImg.png">
-				    	</button>
-				
-						<button id="cfood" class="card" name="pw" value="중식">
-							<img alt="" src="resources/img/cardImg.png" >
-						</button>
-				
-						<button id="jfood"  class="card" name="pw" value="일식">
-							<img alt="" src="resources/img/cardImg.png" >
-						</button>
-				
-						<button id="efood"  class="card" name="pw" value="양식">
-							<img alt="" src="resources/img/cardImg.png">
-						</button>
-					
-						<button id="vfood"  class="card" name="pw" value="베트남">
-							<img alt="" src="resources/img/cardImg.png" >
-						</button>
-					
-						<button id="mfood"  class="card" name="pw" value="분식">
-							<img alt="" src="resources/img/cardImg.png" >
-						</button>
+							<button id="jfood" class="card" name="pw" value="일식">
+								<img alt="" src="resources/img/cardImg.png">
+							</button>
+
+							<button id="efood" class="card" name="pw" value="양식">
+								<img alt="" src="resources/img/cardImg.png">
+							</button>
+
+							<button id="vfood" class="card" name="pw" value="베트남">
+								<img alt="" src="resources/img/cardImg.png">
+							</button>
+
+							<button id="mfood" class="card" name="pw" value="분식">
+								<img alt="" src="resources/img/cardImg.png">
+							</button>
+						</div>
 					</div>
-                </div>
-                <div class="nav">
-                  <label for="img-3" class="prev">&#x2039;</label>
-                  <label for="img-2" class="next">&#x203a;</label>
-                </div>
-                </li>
-            
-            <!-- 룰렛 -->
-                <input type="radio" name="radio-btn" id="img-2" />
-                <li class="slide-container">
-                    <div class="slide">
-                    	 <div class="rouletter">
-        					<div class="rouletter-bg">
-        						<div class="rouletter-wacu"></div>
-        					</div>
-       						<div class="rouletter-arrow"></div>
-        					<button class="rouletter-btn">start</button>
-    					</div> 
-                    </div>
-	                <div class="nav">
-	                  <label for="img-1" class="prev">&#x2039;</label>
-	                  <label for="img-3" class="next">&#x203a;</label>
-	                </div>
-                </li>
-            
-            <!-- 사다리 -->
-                <input type="radio" name="radio-btn" id="img-3" />
-                <li class="slide-container">
-                    <div class="slide">
+					<div class="nav">
+						<label for="img-3" class="prev">&#x2039;</label> <label
+							for="img-2" class="next">&#x203a;</label>
+					</div>
+				</li>
+
+				<!-- 룰렛 -->
+				<input type="radio" name="radio-btn" id="img-2" />
+				<li class="slide-container">
+					<div class="slide">
+						<div class="rouletter">
+							<div class="rouletter-bg">
+								<div class="rouletter-wacu"></div>
+							</div>
+							<div class="rouletter-arrow"></div>
+							<button class="rouletter-btn">start</button>
+						</div>
+					</div>
+					<div class="nav">
+						<label for="img-1" class="prev">&#x2039;</label> <label
+							for="img-3" class="next">&#x203a;</label>
+					</div>
+				</li>
+
+				<!-- 사다리 -->
+				<input type="radio" name="radio-btn" id="img-3" />
+				<li class="slide-container">
+					<div class="slide">
                       	<div class="wrap">
 						    <div id="div_step1">
 						        <div class="label">사다리 게임!</div>
@@ -215,9 +214,6 @@
 						</button>
 
 						</c:when>
-
-
-
 						<c:otherwise>
 						<button>
 						<img id="like_img${c.c_no}" src="resources/img/likeon.png" style="width:30px">
@@ -312,25 +308,24 @@
     </div>
 </body>
 <script>
-function halfSize(){
-    map1.style.width="50%";
-    map1.style.height="100%";
-    map2.style.width="50%";
-    map2.style.height="100%";
-    map1.style.transition=".5s";
-    map2.style.transition=".5s";
-}
-function defaultSize(){
-    map1.style.width="100%";
-    map1.style.height="100%";
-    map2.style.width="0";
-    map2.style.height="0";
-    div2.style.transition=".5s";
-    map1.style.transition=".5s";
-    map2.style.transition=".5s";
-}
+	function halfSize() {
+		map1.style.width = "50%";
+		map1.style.height = "100%";
+		map2.style.width = "50%";
+		map2.style.height = "100%";
+		map1.style.transition = ".5s";
+		map2.style.transition = ".5s";
+	}
+	function defaultSize() {
+		map1.style.width = "100%";
+		map1.style.height = "100%";
+		map2.style.width = "0";
+		map2.style.height = "0";
+		div2.style.transition = ".5s";
+		map1.style.transition = ".5s";
+		map2.style.transition = ".5s";
+	}
 </script>
-
 
 
 

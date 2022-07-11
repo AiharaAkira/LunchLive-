@@ -24,3 +24,34 @@ select * from USERS;
 //유효성 작업확인용
 select count(*) from users where u_id = 'alsdn46391234' and u_nickname ='asd11';
 
+//커뮤니티
+//이거 삭제할때 그냥 다른where c_page<request.getParameter(page) -1씩 하면 되지 않음?
+
+create table community(
+c_no number(10) primary key,
+c_title varchar2(300 char) not null,
+c_contents varchar2(300 char) not null,
+c_file varchar2(500 char) not null,
+c_comment number(10) not null,
+c_like number(10) not null,
+c_page number(10) not null,
+c_date date not null
+);
+
+create sequence community_seq;
+
+
+
+
+//댓글
+
+create table comment(
+com_no varchar2(300 char) primary key,
+com_title varchar2(500 char) not null,
+com_content varchar2(500 char) not null,
+com_users number(10) not null,
+com_community number(10) not null,
+com_date date not null
+);
+
+create sequence comment_seq;
