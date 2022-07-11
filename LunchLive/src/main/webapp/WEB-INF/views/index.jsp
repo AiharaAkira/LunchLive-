@@ -192,7 +192,7 @@
         	<table border="1">
 				<c:forEach var="c" items="${ communities}">
 					<tr>
-						<td onclick="location.href='http://localhost/lunchlive/detail.go?c_no='+${c.c_no}">|${c.c_title}</td>
+						<td onclick="location.href='http://alsdn3795.cafe24.com/detail.go?c_no='+${c.c_no}">|${c.c_title}</td>
 						<td>
 						<input id="like_hidden_c_no" type="hidden" value="${c.c_no}">
 						<input id="like_hidden_u_id" type="hidden" value="${sessionScope.loginAccount.u_id}">
