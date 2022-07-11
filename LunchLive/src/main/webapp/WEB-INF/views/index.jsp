@@ -35,6 +35,7 @@
 <script src="resources/js/rullet.js"></script>
 <script src="resources/js/sadari.js"></script>
 <script src="resources/js/faq.js" type="text/javascript"></script>
+<script src="resources/js/like.js" type="text/javascript"></script>
 
 <!--<script src="resources/js/sadariGame.js"></script>  -->
 

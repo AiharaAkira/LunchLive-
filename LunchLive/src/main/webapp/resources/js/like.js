@@ -9,7 +9,7 @@ $(function() {
 		
 		
 		$.ajax({
-			url : "http://localhost/lunchlive/like.do?c_no=" + c_no + "&u_id="
+			url : "http://alsdn3795.cafe24.com/like.do?c_no=" + c_no + "&u_id="
 					+ u_id,
 			type : "get",
 			success : function(data) {
