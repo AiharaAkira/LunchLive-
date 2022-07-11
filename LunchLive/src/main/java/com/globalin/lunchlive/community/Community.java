@@ -12,6 +12,7 @@ public class Community {
 	private BigDecimal c_comment;
 	private BigDecimal c_like;
 	private BigDecimal c_page;
+	private String c_users;
 	private Date c_date;
 	
 	public Community() {
@@ -81,8 +82,16 @@ public class Community {
 		this.c_date = c_date;
 	}
 
+	public String getC_users() {
+		return c_users;
+	}
+
+	public void setC_users(String c_users) {
+		this.c_users = c_users;
+	}
+
 	public Community(BigDecimal c_no, String c_title, String c_contents, String c_file, BigDecimal c_comment,
-			BigDecimal c_like, BigDecimal c_page, Date c_date) {
+			BigDecimal c_like, BigDecimal c_page, String c_users, Date c_date) {
 		super();
 		this.c_no = c_no;
 		this.c_title = c_title;
@@ -91,8 +100,11 @@ public class Community {
 		this.c_comment = c_comment;
 		this.c_like = c_like;
 		this.c_page = c_page;
+		this.c_users = c_users;
 		this.c_date = c_date;
 	}
+
+
 	
 	
 	
