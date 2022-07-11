@@ -33,8 +33,8 @@
 
 	
 	
-	<c:if test="${sessionScope.loginAccount != null}"><button type="button" onclick="location.href='http://alsdn3795.cafe24.com/update.go?c_no=${communities.c_no}'">수정하기</button></c:if>
-	<c:if test="${sessionScope.loginAccount != null}"><button type="button" onclick="location.href='http://alsdn3795.cafe24.com/delete.do?c_no=${communities.c_no}'">삭제하기</button></c:if>
+	<c:if test="${sessionScope.loginAccount.u_id eq communities.c_users}"><button type="button" onclick="location.href='http://alsdn3795.cafe24.com/update.go?c_no=${communities.c_no}'">수정하기</button></c:if>
+	<c:if test="${sessionScope.loginAccount.u_id eq communities.c_users}"><button type="button" onclick="location.href='http://alsdn3795.cafe24.com/delete.do?c_no=${communities.c_no}'">삭제하기</button></c:if>
 	
 <body>
 
