@@ -1,7 +1,6 @@
 let u_nickname = document.getElementById('u_nickname');
 
 function call(){
-
 	
 	if(isEmpty(u_nickname)){
 		alert("닉네임을 입력해주세요.");
@@ -13,7 +12,6 @@ function call(){
 	return true;
 	
 }
-
 
 $(function() {
 	//아이디찾기 확인
