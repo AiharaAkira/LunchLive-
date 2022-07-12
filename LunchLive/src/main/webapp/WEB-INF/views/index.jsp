@@ -17,6 +17,7 @@
  <link rel="stylesheet" href="resources/css/faq.css">
  <link rel="stylesheet" href="resources/css/rullet.css">
  <link rel="stylesheet" href="resources/css/sadari.css">
+ <link rel="stylesheet" href="resources/css/table.css">
 
 <!-- NotoSans font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,12 +30,12 @@
 
 <script src="resources/js/scroll.js"></script>
 <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
-<!-- <script src="/js/map_cons.js"></script>
-<script src="resources/js/kakaomap.js"></script> -->
+<!-- <script src="/js/map_cons.js"></script> -->
+<script src="resources/js/kakaomap.js"></script>
 <script src="resources/js/card.js"></script>
 <script src="resources/js/rullet.js"></script>
 <script src="resources/js/sadari.js"></script>
-<script src="resources/js/faq.js" type="text/javascript"></script>
+
 
 <!--<script src="resources/js/sadariGame.js"></script>  -->
 
@@ -60,7 +61,7 @@
 			<div class="back">
 				<p>LunchLive!!</p>
 			</div>
-			<img src="resources/img/sky.jpg">
+			<img src="resources/img/ll_background.jpg">
 		</div>
 		
 		<!-- Map, MapRoadView 페이지 -->
@@ -189,121 +190,139 @@
         
         <!-- 커뮤니티 -->
         <div id="div4"  class="contents">
-        	<table border="1">
-				<c:forEach var="c" items="${ communities}">
-					<tr>
-						<td onclick="location.href='http://alsdn3795.cafe24.com/detail.go?c_no='+${c.c_no}">|${c.c_title}</td>
-						<td>
-						<input id="like_hidden_c_no" type="hidden" value="${c.c_no}">
-						<input id="like_hidden_u_id" type="hidden" value="${sessionScope.loginAccount.u_id}">
-						|
-						<c:choose>
-						
-					<%-- 	<c:when test="${not empty likeChecked}">
-						
-						<button  class ="like_btn_first" value="${c.c_no}">
-						<img id="like_img" src="resources/img/likeon.png" style="width:30px">
-						</button>
-						
-						</c:when> --%>
-						
-						<c:when test="${sessionScope.loginAccount != null}">
-						
-						<button  class ="like_btn_first" value="${c.c_no}">
-						<img id="like_img" src="resources/img/likeon.png" style="width:30px">
-						</button>
-
-						</c:when>
-						<c:otherwise>
-						<button>
-						<img id="like_img${c.c_no}" src="resources/img/likeon.png" style="width:30px">
-						</button>
-
-						</c:otherwise>
-						</c:choose>
-						 ${c.c_like}
-						</td>
-						<td>|<fmt:formatDate value="${c.c_date}" pattern="yyyy.MM.dd"/></td>
-					</tr>
-				</c:forEach>
-			</table>
-			
-			<c:if test="${sessionScope.loginAccount != null}"><div><button onclick = "location.href='http://localhost/lunchlive/write.go'">글쓰기</button></div></c:if>
+        	<div id="div4"  class="contents">
+				  <table class="type09">
+				      <thead>
+				        <tr>
+				          <th scope="cols">title</th>
+				          <th scope="cols">day</th>
+				          <th scope="cols">like</th>
+				        </tr>
+				      </thead>
+				      <c:forEach var="c" items="${ communities}">
+				      <tbody>
+				        <tr>
+				          <th scope="row" class="row" onclick="location.href='http://alsdn3795.cafe24.com/detail.go?c_no='+${c.c_no}" >${c.c_title}</th>
+				          <td><fmt:formatDate value="${c.c_date}" pattern="yyyy.MM.dd"/></td>
+				          <td class="like">
+				            <input id="like_hidden_c_no" type="hidden" value="${c.c_no}">
+				            <input id="like_hidden_u_id" type="hidden" value="${sessionScope.loginAccount.u_id}">
+				            <c:choose>
+				              <c:when test="${sessionScope.loginAccount != null}">
+				                <button  class ="like_btn_first" value="${c.c_no}">
+				                <img id="like_img" src="resources/img/likeon.png" style="width:30px">
+				                </button>
+				              </c:when>
+				              <c:otherwise>
+				                <button>
+				                <img id="like_img${c.c_no}" src="resources/img/likeon.png" style="width:30px">
+				                </button>
+				              </c:otherwise>
+				            </c:choose>
+				            ${c.c_like}
+				          </td>
+				        </tr>
+				      </tbody>
+				    </c:forEach>
+				  </table>
+				  <c:if test="${sessionScope.loginAccount != null}">
+				    <div>
+				      <button onclick = "location.href='http://localhost/lunchlive/write.go'">
+				        글쓰기
+				      </button>
+				    </div>
+				  </c:if>
+			</div>
         </div>
         
         <!-- FAQ 페이지 -->
         <div id="div5"  class="contents">
-        	<div id="box_qna">
-        		<ul>
-		            <li class="faq_question">
-		                <span class="faq_txt">❔회원탈퇴를 하고 싶어요!</span>
-		            </li>
-		            <li class="faq_answer">
-		                <span class="faq_txt"> 
-		                	✔탈퇴를 하시기 위해서는 보안상의 문제로 인하여, 반드시 로그인을 하셔야 회원탈퇴가 가능합니다. ※로그인 후의 이 자리에 있는 탈퇴버튼으로 탈퇴 하실 수 있습니다.
-		                    <c:if test="${sessionScope.loginAccount != null}">
+        	<h1>FAQ</h1>
+
+        <div class="wrapper">
+        
+            <div class="container">
+                <div class="question">
+                    회원탈퇴를 하고 싶어요!
+                </div>
+                <div class="answercont">
+                    <div class="answer">
+                        탈퇴를 하시기 위해서는 보안상의 문제로 인하여, 반드시 로그인을 하셔야 회원탈퇴가 가능합니다. ※로그인 후의 이 자리에 있는 탈퇴버튼으로 탈퇴 하실 수 있습니다.<br><br>
+                        <c:if test="${sessionScope.loginAccount != null}">
 		                    <button id="withdrawal_Btn" onclick="location.href='http://alsdn3795.cafe24.com/withdrawal.go'">회원탈퇴</button>
-		                    </c:if>
-		                </span>
-		            </li>
-		            
-		            <li class="faq_question">
-		                <span class="faq_txt">❔회원탈퇴 후 유저 정보가 보관되는 기간에 대해서 궁금합니다. </span>
-		            </li>
-		            <li class="faq_answer">
-		                <span class="faq_txt">
-		                	✔런치라이브는 회원탈퇴된 유저정보를 보관하고 있지 않습니다. 회원 탈퇴된 순간과 동시에 유저정보는 삭제 됩니다.
-		                </span>
-		            </li>
-		            
-		            <li class="faq_question">
-		                <span class="faq_txt">❔버그제보는 어디서 하나요? </span>    
-		            </li>
-		            <li class="faq_answer">
-		                <span class="faq_txt">
-		                	✔런치라이브에서는 커뮤니티페이지에서 버그제보에대해서 작성하시면 런치라이브 관리자가 확인 후 담당자에게 전달됩니다.(최대 1달 소요)
-		                </span>
-		            </li>
-		            
-		            <li class="faq_question">
-		                <span class="faq_txt">❔회원 가입시 입력한 개인 정보는 상업적으로 이용되나요? </span>
-		            </li>
-		            <li class="faq_answer">
-		                <span class="faq_txt">
-		                	✔런치라이브에서는 유저분들의 회원정보를 절대로 상업적으로 이용하지 않습니다.                    
-		                </span>
-		            </li>
-		            
-            		<li class="faq_question">
-	            		<span class="faq_txt">❔부적절한 게시물을 발견하였습니다.</span>
-            		</li>
-		            <li class="faq_answer">
-			            <span class="faq_txt">
-			            	✔부적절한 게시물(자극적이며 성적인 컨텐츠, 폭력적인 게시물, 종교적인 내용을 지닌 게시물, 남을 비하하는 게시물 등)은 신속히 제거할려고 조치하고 있습니다. 혹시라도 대처가 늦게 되어, 유저 여러분들에게 불쾌감을 드린 점은 사과드립니다.
-			            </span>
-		            </li>
-		            
-            		<li class="faq_question">
-	            		<span class="faq_txt">❔런치라이브에서 제공하는 서비스에 대해서 궁금합니다.</span>
-            		</li>
-		            <li class="faq_answer">
-		            	<span class="faq_txt">
-		            		✔런치라이브는 직장인, 학생분들과 같이 점심 메뉴를 고르기 힘들어 하는 분들을 위해서 점심메뉴를 편하게 결정하기 위한 서비스를 제공하고 있습니다. 먼저, 가게명을 알고 계실 경우 가게 위치를 찾을 수 있는
-		                	지도 기능을 제공해 드리고 있습니다. 또한, 점심메뉴의 결정을 돕기위한 여러 게임들 또한 서비스의 일부 입니다. 마지막으로, 회원이신 유저 여러분의 의견을 수렴 받기 위하여 커뮤니티 기능을 제공하고 있습니다.
-		            	</span>
-		            </li>
-		            
-            		<li class="faq_question">
-            			<span class="faq_txt">❔회원 복구에 관하여 궁금합니다.</span>
-            		</li>
-            		<li class="faq_answer">
-            			<span class="faq_txt">
-            				✔런치라이브에서는 절대로 회원 탈퇴한 유저 여러분들의 정보를 보관하고 있지 않습니다.  따라서, 회원 탈퇴후에는 이전과 동일한 닉네임과 아이디로 재가입 하시는 것 외에는 어떠한 경우에도 
-			               	복구를 받으실 수 없다는 점 양해부탁드립니다.
-			       		</span>
-			       	</li>
-        		</ul>
-        	</div>
+		                </c:if>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="question">
+                    회원탈퇴 후 유저 정보가 보관되는 기간에 대해서 궁금합니다.
+                </div>
+                <div class="answercont">
+                    <div class="answer">
+                        런치라이브는 회원탈퇴된 유저정보를 보관하고 있지 않습니다. 회원 탈퇴된 순간과 동시에 유저정보는 삭제 됩니다.<br><br>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="question">
+                    버그제보는 어디서 하나요? 
+                </div>
+                <div class="answercont">
+                    <div class="answer">
+                        런치라이브에서는 커뮤니티페이지에서 버그제보에대해서 작성하시면 런치라이브 관리자가 확인 후 담당자에게 전달됩니다.(최대 1달 소요)<br><br>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="question">
+                    회원 가입시 입력한 개인 정보는 상업적으로 이용되나요?
+                </div>
+                <div class="answercont">
+                    <div class="answer">
+                        런치라이브에서는 유저분들의 회원정보를 절대로 상업적으로 이용하지 않습니다. 안심하시고 이용하시면 되겠습니다.<br><br>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="question">
+                    부적절한 게시물을 발견하였습니다.
+                </div>
+                <div class="answercont">
+                    <div class="answer">
+                        부적절한 게시물(자극적이며 성적인 컨텐츠, 폭력적인 게시물, 종교적인 내용을 지닌 게시물, 남을 비하하는 게시물 등)은 신속히 제거할려고 조치하고 있습니다. 혹시라도 대처가 늦게 되어, 유저 여러분들에게 불쾌감을 드린 점은 사과드립니다.<br><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="question">
+                    런치라이브에서 제공하는 서비스에 대해서 궁금합니다.
+                </div>
+                <div class="answercont">
+                    <div class="answer">
+                        런치라이브는 직장인, 학생분들과 같이 점심 메뉴를 고르기 힘들어 하는 분들을 위해서 점심메뉴를 편하게 결정하기 위한 서비스를 제공하고 있습니다. 먼저, 가게명을 알고 계실 경우 가게 위치를 찾을 수 있는
+                        지도 기능을 제공해 드리고 있습니다. 또한, 점심메뉴의 결정을 돕기위한 여러 게임들 또한 서비스의 일부 입니다. 마지막으로, 회원이신 유저 여러분의 의견을 수렴 받기 위하여 커뮤니티 기능을 제공하고 있습니다.<br><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="question">
+                    회원 복구에 관하여 궁금합니다.
+                </div>
+                <div class="answercont">
+                    <div class="answer">
+                        런치라이브에서는 절대로 회원 탈퇴한 유저 여러분들의 정보를 보관하고 있지 않습니다.  따라서, 회원 탈퇴후에는 이전과 동일한 닉네임과 아이디로 재가입 하시는 것 외에는 어떠한 경우에도 
+                        복구를 받으실 수 없다는 점 양해부탁드립니다.<br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </body>
@@ -326,7 +345,6 @@
 		map2.style.transition = ".5s";
 	}
 </script>
-
-
+<script src="resources/js/faq.js"></script>
 
 </html>
