@@ -194,6 +194,8 @@
 				<c:forEach var="c" items="${ communities}">
 					<tr>
 						<td onclick="location.href='http://alsdn3795.cafe24.com/detail.go?c_no='+${c.c_no}">|${c.c_title}</td>
+						<td>|${c.c_contents}</td>
+						
 						<td>
 						<input id="like_hidden_c_no" type="hidden" value="${c.c_no}">
 						<input id="like_hidden_u_id" type="hidden" value="${sessionScope.loginAccount.u_id}">
@@ -222,7 +224,7 @@
 
 						</c:otherwise>
 						</c:choose>
-						 ${c.c_like}
+						 <span id="c_like${c.c_no}">${c.c_like}</span>
 						</td>
 						<td>|<fmt:formatDate value="${c.c_date}" pattern="yyyy.MM.dd"/></td>
 					</tr>
