@@ -203,6 +203,8 @@
 				      <tbody>
 				        <tr>
 				          <th scope="row" class="row" onclick="location.href='http://alsdn3795.cafe24.com/detail.go?c_no='+${c.c_no}" >${c.c_title}</th>
+				          <td>${c.c_contents}</td>
+				          
 				          <td><fmt:formatDate value="${c.c_date}" pattern="yyyy.MM.dd"/></td>
 				          <td class="like">
 				            <input id="like_hidden_c_no" type="hidden" value="${c.c_no}">
