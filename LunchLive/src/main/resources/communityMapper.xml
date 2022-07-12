@@ -35,6 +35,11 @@ select * from ( select @rownum:=@rownum+1, community.* from (select * from commu
 	SELECT * FROM community where c_no = #{c_no}
 </select>
 
+<select id="ajaxGetCommunity" parameterType="String" resultType="com.globalin.lunchlive.community.Community">
+	SELECT * FROM community where c_no = #{c_no}
+	
+</select>
+
 <update id="updateDo" parameterType="com.globalin.lunchlive.community.Community" >
 
 	update community set c_title = #{c_title}, c_contents = #{c_contents}, c_file=#{c_file}
