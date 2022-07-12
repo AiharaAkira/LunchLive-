@@ -26,7 +26,7 @@
 <!-- NotoSans font End-->
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb25f228d48f48fad51c0abe872c7f1"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=60d3d5b568586bcc670fec01a1366483"></script>
 
 <script src="resources/js/scroll.js"></script>
 <!--  <script src="/js/jquery-3.6.0.min.js"></script>-->
@@ -35,7 +35,7 @@
 <script src="resources/js/card.js"></script>
 <script src="resources/js/rullet.js"></script>
 <script src="resources/js/sadari.js"></script>
-
+<script src="resources/js/like.js" type="text/javascript"></script>
 
 <!--<script src="resources/js/sadariGame.js"></script>  -->
 

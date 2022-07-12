@@ -32,6 +32,17 @@ public class CommunityDAO {
 		request.setAttribute("communities", communities);
 
 	}
+	
+	public Community ajaxGetCommunity(HttpServletRequest request) {
+		String c_no = request.getParameter("c_no");
+
+		CommunityMapper communityMapper = ss.getMapper(CommunityMapper.class);
+
+		
+		Community communities = communityMapper.ajaxGetCommunity(c_no);
+		
+		return communities;
+	}
 
 	public void detaile(HttpServletRequest request) {
 		

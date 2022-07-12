@@ -23,4 +23,7 @@ public interface CommunityMapper {
 
 	List<Community> getPrevFreeDetail(Map<String, String> c);
 
+
+	Community ajaxGetCommunity(String no);
+
 }

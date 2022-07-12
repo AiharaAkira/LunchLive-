@@ -33,8 +33,9 @@
 		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
 		<beans:property name="driverClass"
 			value="org.mariadb.jdbc.Driver" />
-            <beans:property name="url"
-            value="jdbc:mariadb://alsdn3795.cafe24.com:3306/alsdn3795"  />
+
+		   <beans:property name="url"
+            value="jdbc:mariadb://localhost:3306/alsdn3795"  />
 
 		<beans:property name="username" value="alsdn3795" />
 		<beans:property name="password" value="gychoi2511" />
