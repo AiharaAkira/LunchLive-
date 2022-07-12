@@ -1,0 +1,41 @@
+table.type09 {
+    margin-top: 150px;
+    padding: 5px;
+    /* border-collapse: collapse; */
+    text-align: left;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 25%);
+  }
+  table.type09 .row {
+  	cursor: pointer;
+  }
+  
+  table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #0A4F6C;
+    border-bottom: 3px solid #0A4F6C;
+  }
+  table.type09 tbody th {
+    width: 300px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #c1c1c1;
+    background-color: #ccc;
+  }
+  table.type09 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+  }
+  
+table.type09 .like {
+    width: 150px;
+}
