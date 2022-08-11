@@ -1,6 +1,7 @@
 package com.globalin.lunchlive.like;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -79,8 +80,23 @@ public class LikeDAO {
 				Account a= (Account)request.getSession().getAttribute("loginAccount");
 				if(ss.getMapper(LikeTo.class).likeCheckRe(a)>=1) {
 					System.out.println("좋아요 체킹!");
+					
+					
 					request.setAttribute("likeChecked","likeChecked");
-				}				
+				}	
+				
+				
+				try {
+					
+					LikeVO likes = ss.getMapper(LikeTo.class).getAllLike(a);
+				
+					request.setAttribute("likes", likes);
+					
+				} catch (Exception e) {
+
+				e.printStackTrace();
+				
+				}
 				
 			}
 

@@ -1,5 +1,6 @@
 package com.globalin.lunchlive.like;
 
+import java.util.List;
 import java.util.Map;
 
 import com.globalin.lunchlive.account.Account;
@@ -18,5 +19,7 @@ public interface LikeTo {
 	int likeDelete(Map<String, String> likes);
 
 	int likeCheckRe(Account a);
+
+	LikeVO getAllLike(Account a);
 
 }

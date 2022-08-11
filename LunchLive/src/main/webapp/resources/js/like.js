@@ -17,7 +17,20 @@ $(function() {
 				
 				$("#c_like"+c_no).empty();
 				$("#c_like"+c_no).text(data.c_like);
-				console.log(data.c_like);
+				
+				
+				if(data.c_like > 0){
+					
+					
+					
+					$("#like_img"+c_no).attr("src", "resources/img/likeon.png");
+				
+				}else{
+					$("#like_img"+c_no).attr("src", "resources/img/likeoff.png");
+					
+				}
+				
+				
 				
 			},
 			error : function() {

@@ -203,25 +203,37 @@
 				      <tbody>
 				        <tr>
 				          <th scope="row" class="row" onclick="location.href='http://alsdn3795.cafe24.com/detail.go?c_no='+${c.c_no}" >${c.c_title}</th>
-				          <td>${c.c_contents}</td>
+				         <%--  <td>${c.c_contents}</td> --%>
 				          
 				          <td><fmt:formatDate value="${c.c_date}" pattern="yyyy.MM.dd"/></td>
 				          <td class="like">
 				            <input id="like_hidden_c_no" type="hidden" value="${c.c_no}">
 				            <input id="like_hidden_u_id" type="hidden" value="${sessionScope.loginAccount.u_id}">
 				            <c:choose>
+				            
+				             <c:when test="${c.c_like > 0 }">
+				                
+				                <button  class ="like_btn_first" value="${c.c_no}">
+				                <img id="like_img${c.c_no}" src="resources/img/likeon.png" style="width:30px">
+				                </button>
+				                
+				              </c:when>
+				            
+				            
 				              <c:when test="${sessionScope.loginAccount != null}">
 				                <button  class ="like_btn_first" value="${c.c_no}">
-				                <img id="like_img" src="resources/img/likeon.png" style="width:30px">
+				                <img id="like_img${c.c_no}" src="resources/img/likeoff.png" style="width:30px">
 				                </button>
 				              </c:when>
+				              
+				             
 				              <c:otherwise>
 				                <button>
 				                <img id="like_img${c.c_no}" src="resources/img/likeon.png" style="width:30px">
 				                </button>
 				              </c:otherwise>
 				            </c:choose>
-				            ${c.c_like}
+				            <span id="c_like${c.c_no}">${c.c_like}</span>
 				          </td>
 				        </tr>
 				      </tbody>
@@ -229,7 +241,7 @@
 				  </table>
 				  <c:if test="${sessionScope.loginAccount != null}">
 				    <div>
-				      <button onclick = "location.href='http://localhost/lunchlive/write.go'">
+				      <button onclick = "location.href='http://alsdn3795.cafe24.com/write.go'">
 				        글쓰기
 				      </button>
 				    </div>

@@ -20,6 +20,13 @@ select count(*) from LIKETO where l_community = #{c_no} and l_users = #{u_id}
 
 </select>
 
+<select id = "getAllLike" parameterType="com.globalin.lunchlive.account.Account" resultType="com.globalin.lunchlive.like.LikeVO">
+	
+	select * from LIKETO where l_users = #{u_id}
+
+</select>
+
+
 
 <update id="LikeDo" parameterType="Map">
 
